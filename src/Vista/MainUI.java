@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Vista;
+
 
 /**
  *
@@ -41,6 +37,11 @@ public class MainUI extends javax.swing.JFrame {
         btn_mod3.setText("Módulo 3 (Gestión de Ventas)");
 
         btn_mod1.setText("Módulo 1 (Mantenedor de información)");
+        btn_mod1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mod1ActionPerformed(evt);
+            }
+        });
 
         btn_mod4.setText("Módulo 4 (Gestión de Clientes)");
 
@@ -49,7 +50,7 @@ public class MainUI extends javax.swing.JFrame {
         btn_mod2.setText("Módulo 2 (Venta de Productos)");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
-        jLabel1.setText("(decidir qué texto va a ir aquí)");
+        jLabel1.setText("420 BLAZE IT NI**A SMOKE WEED EVERYDAY");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,6 +94,11 @@ public class MainUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_mod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mod1ActionPerformed
+        //Modulo1 mod1 = new Modulo1();
+        //mod1.setVisible(true);
+    }//GEN-LAST:event_btn_mod1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -129,11 +135,11 @@ public class MainUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_mod1;
-    private javax.swing.JButton btn_mod2;
-    private javax.swing.JButton btn_mod3;
-    private javax.swing.JButton btn_mod4;
-    private javax.swing.JButton btn_mod5;
+    public javax.swing.JButton btn_mod1;
+    public javax.swing.JButton btn_mod2;
+    public javax.swing.JButton btn_mod3;
+    public javax.swing.JButton btn_mod4;
+    public javax.swing.JButton btn_mod5;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 

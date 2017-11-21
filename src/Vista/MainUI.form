@@ -74,33 +74,51 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xf3;dulo 3 (Gesti&#xf3;n de Ventas)"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btn_mod1">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xf3;dulo 1 (Mantenedor de informaci&#xf3;n)"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_mod1ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btn_mod4">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xf3;dulo 4 (Gesti&#xf3;n de Clientes)"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btn_mod5">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xf3;dulo 5 (Vendedores)"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btn_mod2">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xf3;dulo 2 (Venta de Productos)"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Semibold" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="(decidir qu&#xe9; texto va a ir aqu&#xed;)"/>
+        <Property name="text" type="java.lang.String" value="420 BLAZE IT NI**A SMOKE WEED EVERYDAY"/>
       </Properties>
     </Component>
   </SubComponents>
