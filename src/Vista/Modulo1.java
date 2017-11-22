@@ -31,16 +31,16 @@ public class Modulo1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabel_textoVentana = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanelTab_usuarios = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel_codUsuario = new javax.swing.JLabel();
+        jLabel_RUT = new javax.swing.JLabel();
+        jLabel_login = new javax.swing.JLabel();
+        jLabel_password = new javax.swing.JLabel();
+        jLabel_password2 = new javax.swing.JLabel();
+        jLabel_estado = new javax.swing.JLabel();
+        jLabel_nivelAcceso = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -51,35 +51,39 @@ public class Modulo1 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButton_editRegistro = new javax.swing.JButton();
+        jButton_okEdit = new javax.swing.JButton();
+        jButton_listUsuarios = new javax.swing.JButton();
+        jButton_registrar = new javax.swing.JButton();
+        jButton_deleteUsuario = new javax.swing.JButton();
+        jButton_cleanAllFields = new javax.swing.JButton();
         jPanelTab_clientes = new javax.swing.JPanel();
         jPanelTab_productos = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanelTab_categoria = new javax.swing.JPanel();
         jPanelTab_stock = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setText("Seleccione la pestaña correspondiente para agregar, modificar o eliminar registros de la base de datos");
+        jLabel_textoVentana.setText("Seleccione la pestaña correspondiente para agregar, modificar o eliminar registros de la base de datos");
 
-        jLabel2.setText("Código Usuario");
+        jLabel_codUsuario.setText("Código Usuario");
 
-        jLabel3.setText("RUT");
+        jLabel_RUT.setText("RUT");
 
-        jLabel4.setText("Login");
+        jLabel_login.setText("Login");
 
-        jLabel5.setText("Contraseña");
+        jLabel_password.setText("Contraseña");
 
-        jLabel6.setText("Reingrese contraseña");
+        jLabel_password2.setText("Reingrese contraseña");
 
-        jLabel7.setText("Estado");
+        jLabel_estado.setText("Estado");
 
-        jLabel8.setText("Nivel de Acceso");
+        jLabel_nivelAcceso.setText("Nivel de Acceso");
 
         jPasswordField1.setText("jPasswordField1");
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,41 +122,41 @@ public class Modulo1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("Editar registro");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+        jButton_editRegistro.setText("Editar registro");
+        jPanel1.add(jButton_editRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
-        jButton3.setText("Fin edición");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 120, -1));
+        jButton_okEdit.setText("Fin edición");
+        jPanel1.add(jButton_okEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 120, -1));
 
-        jButton1.setText("Listar usuarios");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+        jButton_listUsuarios.setText("Listar usuarios");
+        jPanel1.add(jButton_listUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
-        jButton4.setText("Crear nuevo usuario");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 150, -1));
+        jButton_registrar.setText("Crear nuevo usuario");
+        jPanel1.add(jButton_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 150, -1));
 
-        jButton5.setText("Eliminar usuario");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, -1));
+        jButton_deleteUsuario.setText("Eliminar usuario");
+        jPanel1.add(jButton_deleteUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, -1));
 
-        jButton6.setText("Limpiar todos los campos");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 210, -1));
+        jButton_cleanAllFields.setText("Limpiar todos los campos");
+        jPanel1.add(jButton_cleanAllFields, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 210, -1));
 
         javax.swing.GroupLayout jPanelTab_usuariosLayout = new javax.swing.GroupLayout(jPanelTab_usuarios);
         jPanelTab_usuarios.setLayout(jPanelTab_usuariosLayout);
         jPanelTab_usuariosLayout.setHorizontalGroup(
             jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
+                            .addComponent(jLabel_codUsuario)
+                            .addComponent(jLabel_RUT)
+                            .addComponent(jLabel_login)
+                            .addComponent(jLabel_password)
+                            .addComponent(jLabel_password2)
+                            .addComponent(jLabel_estado)
+                            .addComponent(jLabel_nivelAcceso))
                         .addGap(84, 84, 84)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -163,7 +167,7 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(jTextField2)
                             .addComponent(jTextField1))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_usuariosLayout.setVerticalGroup(
@@ -173,31 +177,31 @@ public class Modulo1 extends javax.swing.JFrame {
                 .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
+                            .addComponent(jLabel_codUsuario)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
+                            .addComponent(jLabel_RUT)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel_login)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
+                            .addComponent(jLabel_password)
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
+                            .addComponent(jLabel_password2)
                             .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
+                            .addComponent(jLabel_estado)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
+                            .addComponent(jLabel_nivelAcceso)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -220,15 +224,39 @@ public class Modulo1 extends javax.swing.JFrame {
 
         jTabbedPane.addTab("Clientes", jPanelTab_clientes);
 
+        jLabel9.setText("jLabel9");
+
+        jLabel2.setText("jLabel2");
+
+        jLabel3.setText("jLabel3");
+
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout jPanelTab_productosLayout = new javax.swing.GroupLayout(jPanelTab_productos);
         jPanelTab_productos.setLayout(jPanelTab_productosLayout);
         jPanelTab_productosLayout.setHorizontalGroup(
             jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 898, Short.MAX_VALUE)
+            .addGroup(jPanelTab_productosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addContainerGap(851, Short.MAX_VALUE))
         );
         jPanelTab_productosLayout.setVerticalGroup(
             jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(jPanelTab_productosLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Productos", jPanelTab_productos);
@@ -265,19 +293,19 @@ public class Modulo1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabel_textoVentana)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane)
+                .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE))
+                .addComponent(jLabel_textoVentana)
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane))
         );
 
         pack();
@@ -327,21 +355,25 @@ public class Modulo1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton_cleanAllFields;
+    private javax.swing.JButton jButton_deleteUsuario;
+    private javax.swing.JButton jButton_editRegistro;
+    private javax.swing.JButton jButton_listUsuarios;
+    private javax.swing.JButton jButton_okEdit;
+    private javax.swing.JButton jButton_registrar;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel_RUT;
+    private javax.swing.JLabel jLabel_codUsuario;
+    private javax.swing.JLabel jLabel_estado;
+    private javax.swing.JLabel jLabel_login;
+    private javax.swing.JLabel jLabel_nivelAcceso;
+    private javax.swing.JLabel jLabel_password;
+    private javax.swing.JLabel jLabel_password2;
+    private javax.swing.JLabel jLabel_textoVentana;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelTab_categoria;
     private javax.swing.JPanel jPanelTab_clientes;
