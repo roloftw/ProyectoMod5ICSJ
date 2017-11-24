@@ -1,5 +1,7 @@
 package Vista;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @RolandoEscobar
@@ -11,6 +13,8 @@ public class Modulo1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        txt_usuarios_codUser.setEditable(false);
         //línea para habilitar o deshabilitar pestañas
         //jTabbedPane.removeTabAt(0);
         
@@ -33,12 +37,10 @@ public class Modulo1 extends javax.swing.JFrame {
         lab_usuarios_login = new javax.swing.JLabel();
         lab_usuarios_pass = new javax.swing.JLabel();
         lab_usuarios_pass2 = new javax.swing.JLabel();
-        lab_usuarios_estado = new javax.swing.JLabel();
         lab_usuarios_nivelAcceso = new javax.swing.JLabel();
         txt_usuarios_codUser = new javax.swing.JTextField();
         txt_usuarios_rut = new javax.swing.JTextField();
         txt_usuarios_login = new javax.swing.JTextField();
-        txt_usuarios_estado = new javax.swing.JTextField();
         pass_usuarios_pass = new javax.swing.JPasswordField();
         pass_usuarios_pass2 = new javax.swing.JPasswordField();
         cbox_usuarios_nivelAcceso = new javax.swing.JComboBox<>();
@@ -121,6 +123,11 @@ public class Modulo1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jLabel1.setText("Seleccione la pestaña correspondiente para agregar, modificar o eliminar registros de la base de datos");
 
@@ -134,8 +141,6 @@ public class Modulo1 extends javax.swing.JFrame {
 
         lab_usuarios_pass2.setText("Reingrese contraseña");
 
-        lab_usuarios_estado.setText("Estado");
-
         lab_usuarios_nivelAcceso.setText("Nivel de Acceso");
 
         pass_usuarios_pass.setText("jPasswordField1");
@@ -147,7 +152,7 @@ public class Modulo1 extends javax.swing.JFrame {
 
         pass_usuarios_pass2.setText("jPasswordField2");
 
-        cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Admin (Superusuario)", "Supervisor", "Vendedor" }));
+        cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Administrador", "Supervisor", "Vendedor" }));
         cbox_usuarios_nivelAcceso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbox_usuarios_nivelAccesoActionPerformed(evt);
@@ -208,12 +213,10 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(lab_usuarios_login, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_usuarios_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(85, 85, 85)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cbox_usuarios_nivelAcceso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_usuarios_estado)
                             .addComponent(pass_usuarios_pass2)
                             .addComponent(pass_usuarios_pass)
                             .addComponent(txt_usuarios_login)
@@ -248,11 +251,7 @@ public class Modulo1 extends javax.swing.JFrame {
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lab_usuarios_pass2)
                             .addComponent(pass_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_estado)
-                            .addComponent(txt_usuarios_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(60, 60, 60)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lab_usuarios_nivelAcceso)
                             .addComponent(cbox_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -725,6 +724,11 @@ public class Modulo1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categorias_eliminarCategoriaActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+      
+    // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
+
     /**
      * @param args the command line arguments
      */
@@ -821,7 +825,6 @@ public class Modulo1 extends javax.swing.JFrame {
     private javax.swing.JLabel lab_productos_ubicacionBodega;
     private javax.swing.JLabel lab_productos_unidadProducto;
     private javax.swing.JLabel lab_usuarios_codUser;
-    private javax.swing.JLabel lab_usuarios_estado;
     private javax.swing.JLabel lab_usuarios_login;
     private javax.swing.JLabel lab_usuarios_nivelAcceso;
     private javax.swing.JLabel lab_usuarios_pass;
@@ -851,7 +854,6 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JTextField txt_productos_ubicacionBodega;
     public javax.swing.JTextField txt_productos_unidadProducto;
     public javax.swing.JTextField txt_usuarios_codUser;
-    public javax.swing.JTextField txt_usuarios_estado;
     public javax.swing.JTextField txt_usuarios_login;
     public javax.swing.JTextField txt_usuarios_rut;
     // End of variables declaration//GEN-END:variables
