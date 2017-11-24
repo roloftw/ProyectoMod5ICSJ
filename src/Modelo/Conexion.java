@@ -18,7 +18,7 @@ public class Conexion {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ventas","root","rolando");
             System.out.println("Se ha establecido la conexion");
         } catch (Exception e) {
-            System.out.println(" La conexion ha fallado");
+            System.out.println(" La conexion ha fallado (" + e + ")");
         }
         
         return con;

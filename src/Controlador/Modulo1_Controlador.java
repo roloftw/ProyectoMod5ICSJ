@@ -82,11 +82,10 @@ public class Modulo1_Controlador implements ActionListener {
             String login = mod1CRUD.txt_usuarios_login.getText();
             String password = mod1CRUD.pass_usuarios_pass.getText();
             String estado = "1";
-            //String acceso = mod1CRUD.cbox_usuarios_nivelAcceso.getSelectedItem().toString();
-            String acceso = "a";
+            String acceso = mod1CRUD.cbox_usuarios_nivelAcceso.getSelectedItem().toString();
             
-            //String rptaRegistro = userCRUD.InsertUsuario(codU, rut_usuario, login, password, estado, acceso);
-            String rptaRegistro = userCRUD.InsertUsuario("a", "a", "b", "p", "e", "ac");
+            String rptaRegistro = userCRUD.InsertUsuario(codU, rut_usuario, login, password, acceso);
+            //String rptaRegistro = userCRUD.InsertUsuario("a", "a", "b", "p", "e", "ac");
             
             if (rptaRegistro != null) {
                 JOptionPane.showMessageDialog(null, rptaRegistro);
@@ -137,7 +136,7 @@ public class Modulo1_Controlador implements ActionListener {
             String acceso = mod1CRUD.cbox_usuarios_nivelAcceso.getSelectedItem().toString();
             
             
-            int rptaEdit = userCRUD.editarUsuario(codUsuario, rut_usuario, login, password, estado, acceso);
+            int rptaEdit = userCRUD.editarUsuario(codUsuario, rut_usuario, login, password, acceso);
             if(rptaEdit > 0) {
                     JOptionPane.showMessageDialog(null, "Edición exitosa");                    
                 } else {
@@ -158,7 +157,7 @@ public class Modulo1_Controlador implements ActionListener {
             int numFS = mod1CRUD.table_usuarios.getSelectedRowCount();
             
             if(filaEditar >= 0 && numFS == 1) {
-                String cod = String.valueOf(mod1CRUD.table_usuarios.getValueAt(filaEditar, 0));
+                String cod = String.valueOf(mod1CRUD.table_usuarios.getValueAt(filaEditar, 1));
                 int rptaDelete = userCRUD.eliminarUsuario(cod);
                 JOptionPane.showMessageDialog(null, "Registro eliminado correctamente");
             } else {

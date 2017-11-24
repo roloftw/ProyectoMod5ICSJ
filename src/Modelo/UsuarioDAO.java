@@ -13,19 +13,18 @@ public class UsuarioDAO {
         conexion = new Conexion();
     }
     
-    public String InsertUsuario(String codUsuario, String rut_usuario, String login, String password, String estado, String acceso) {
+    public String InsertUsuario(String codUsuario, String rut_usuario, String login, String password, String acceso) {
         String rptaRegistro = null;
         try {
             Connection accesoDB = conexion.getConexion();
             //llamar a la rutina creada en phpMyAdmin
-            CallableStatement cs = accesoDB.prepareCall("{call insertar_usuario(?,?,?,?,?,?)}");
-            /*cs.setString(1, Integer.toString(codUsuario));
+            CallableStatement cs = accesoDB.prepareCall("{call insertar_usuario(?,?,?,?,?)}");
+            cs.setString(1, codUsuario);
             cs.setString(2, rut_usuario);
             cs.setString(3, login);
             cs.setString(4, password);
-            cs.setString(5, "1");
-            cs.setString(6, acceso);
-            cs.setString(7, "");*/
+            //cs.setString(5, estado);
+            cs.setString(5, acceso);
             
             
         
@@ -34,7 +33,7 @@ public class UsuarioDAO {
             rptaRegistro = "Registro exitoso";
         }
         } catch (SQLException e) {
-        
+            System.out.println(e);
         }
         return rptaRegistro;
     }
@@ -61,21 +60,20 @@ public class UsuarioDAO {
         return listaUsuarios;
     }
     
-    public int editarUsuario(int codUsuario, String rut_usuario, String login, String password, String estado, String acceso) {
+    public int editarUsuario(int codUsuario, String rut_usuario, String login, String password, String acceso) {
         int numFA = 0;
         try {
             Connection acceDB = conexion.getConexion();
-            CallableStatement cs = acceDB.prepareCall("{call editar_usuario(?,?,?,?)}");
+            CallableStatement cs = acceDB.prepareCall("{call editar_usuario(?,?,?,?,?)}");
             cs.setInt(1, codUsuario);
             cs.setString(2, rut_usuario);
             cs.setString(3, login);
             cs.setString(4, password);
-            cs.setString(5, estado);
-            cs.setString(6, acceso);
+            cs.setString(5, acceso);
         
             numFA = cs.executeUpdate();            
         } catch (SQLException e) {
-            
+            System.out.println(e);
         }
         return numFA;
     }
@@ -84,12 +82,12 @@ public class UsuarioDAO {
         int numFA = 0;
         try {
             Connection acceDB = conexion.getConexion();
-            CallableStatement cs = acceDB.prepareCall("{call eliminar_usuario(?)}");
+            CallableStatement cs = acceDB.prepareCall("{call desactivar_usuario(?)}");
             cs.setString(1, rut);
             
             numFA = cs.executeUpdate();
         } catch (SQLException e) {
-            
+            System.out.println(e);
         }
         return numFA;
     }
