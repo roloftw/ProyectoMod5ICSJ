@@ -35,11 +35,9 @@ public class Login extends javax.swing.JFrame {
         btn_ayuda = new javax.swing.JButton();
         lab_logo = new javax.swing.JLabel();
         txt_user = new javax.swing.JTextField();
-        combo_type = new javax.swing.JComboBox<>();
         pass_userpass = new javax.swing.JPasswordField();
         label_user = new javax.swing.JLabel();
         label_pass = new javax.swing.JLabel();
-        label_type = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(0, 102, 0));
@@ -53,9 +51,7 @@ public class Login extends javax.swing.JFrame {
 
         btn_ayuda.setText("Ayuda");
 
-        lab_logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\usuario\\Pictures\\logo-500.png")); // NOI18N
-
-        combo_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor", "Supervisor", "Administrador" }));
+        lab_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-500.png"))); // NOI18N
 
         label_user.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         label_user.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,10 +60,6 @@ public class Login extends javax.swing.JFrame {
         label_pass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         label_pass.setForeground(new java.awt.Color(255, 255, 255));
         label_pass.setText("Contraseña:");
-
-        label_type.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        label_type.setForeground(new java.awt.Color(255, 255, 255));
-        label_type.setText("Tipo usuario:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,13 +77,11 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label_pass)
-                            .addComponent(label_type)
                             .addComponent(label_user))
-                        .addGap(45, 45, 45)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pass_userpass, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pass_userpass, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 24, Short.MAX_VALUE)
                 .addComponent(lab_logo)
                 .addGap(27, 27, 27))
@@ -112,11 +102,7 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pass_userpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_pass))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_type)
-                            .addComponent(combo_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                        .addGap(65, 65, 65)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_aceptar)
                             .addComponent(btn_cancelar)
@@ -182,11 +168,9 @@ public class Login extends javax.swing.JFrame {
     public javax.swing.JButton btn_aceptar;
     public javax.swing.JButton btn_ayuda;
     public javax.swing.JButton btn_cancelar;
-    public javax.swing.JComboBox<String> combo_type;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel lab_logo;
     public javax.swing.JLabel label_pass;
-    public javax.swing.JLabel label_type;
     public javax.swing.JLabel label_user;
     public javax.swing.JPasswordField pass_userpass;
     public javax.swing.JTextField txt_user;

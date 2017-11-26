@@ -1,7 +1,5 @@
 package Vista;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @RolandoEscobar
@@ -13,8 +11,6 @@ public class Modulo1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        txt_usuarios_codUser.setEditable(false);
         //línea para habilitar o deshabilitar pestañas
         //jTabbedPane.removeTabAt(0);
         
@@ -29,7 +25,7 @@ public class Modulo1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        mod1_title = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanelTab_usuarios = new javax.swing.JPanel();
         lab_usuarios_codUser = new javax.swing.JLabel();
@@ -37,10 +33,12 @@ public class Modulo1 extends javax.swing.JFrame {
         lab_usuarios_login = new javax.swing.JLabel();
         lab_usuarios_pass = new javax.swing.JLabel();
         lab_usuarios_pass2 = new javax.swing.JLabel();
+        lab_usuarios_estado = new javax.swing.JLabel();
         lab_usuarios_nivelAcceso = new javax.swing.JLabel();
         txt_usuarios_codUser = new javax.swing.JTextField();
         txt_usuarios_rut = new javax.swing.JTextField();
         txt_usuarios_login = new javax.swing.JTextField();
+        txt_usuarios_estado = new javax.swing.JTextField();
         pass_usuarios_pass = new javax.swing.JPasswordField();
         pass_usuarios_pass2 = new javax.swing.JPasswordField();
         cbox_usuarios_nivelAcceso = new javax.swing.JComboBox<>();
@@ -122,27 +120,55 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_stock_listarStock = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 51, 0));
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowActivated(java.awt.event.WindowEvent evt) {
-                formWindowActivated(evt);
-            }
-        });
 
-        jLabel1.setText("Seleccione la pestaña correspondiente para agregar, modificar o eliminar registros de la base de datos");
+        mod1_title.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        mod1_title.setText("Seleccione la pestaña correspondiente para agregar, modificar o eliminar registros de la base de datos");
 
+        jTabbedPane.setBackground(new java.awt.Color(0, 51, 0));
+        jTabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+
+        jPanelTab_usuarios.setBackground(new java.awt.Color(0, 51, 0));
+
+        lab_usuarios_codUser.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_codUser.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_codUser.setText("Código Usuario");
 
+        lab_usuarios_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_rut.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_rut.setText("RUT");
 
+        lab_usuarios_login.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_login.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_login.setText("Login");
 
+        lab_usuarios_pass.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_pass.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_pass.setText("Contraseña");
 
+        lab_usuarios_pass2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_pass2.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_pass2.setText("Reingrese contraseña");
 
+        lab_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_estado.setForeground(new java.awt.Color(255, 255, 255));
+        lab_usuarios_estado.setText("Estado");
+
+        lab_usuarios_nivelAcceso.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_usuarios_nivelAcceso.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_nivelAcceso.setText("Nivel de Acceso");
 
+        txt_usuarios_codUser.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_usuarios_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_usuarios_login.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        pass_usuarios_pass.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         pass_usuarios_pass.setText("jPasswordField1");
         pass_usuarios_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,15 +176,18 @@ public class Modulo1 extends javax.swing.JFrame {
             }
         });
 
+        pass_usuarios_pass2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         pass_usuarios_pass2.setText("jPasswordField2");
 
-        cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Administrador", "Supervisor", "Vendedor" }));
+        cbox_usuarios_nivelAcceso.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Admin (Superusuario)", "Supervisor", "Vendedor" }));
         cbox_usuarios_nivelAcceso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbox_usuarios_nivelAccesoActionPerformed(evt);
             }
         });
 
+        table_usuarios.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -178,23 +207,30 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_usuarios_contenedorTabla.setViewportView(table_usuarios);
 
+        jPanel_usuarios_contenedorBotones.setBackground(new java.awt.Color(0, 51, 0));
         jPanel_usuarios_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_usuarios_editarRegistro.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_editarRegistro.setText("Editar registro");
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_editarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 150, -1));
 
+        btn_usuarios_finEdicion.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_finEdicion.setText("Fin edición");
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_finEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 150, -1));
 
+        btn_usuarios_listarUsuarios.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_listarUsuarios.setText("Listar usuarios");
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_listarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 150, -1));
 
+        btn_usuarios_crearNuevoUsuario.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_crearNuevoUsuario.setText("Crear nuevo usuario");
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_crearNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
+        btn_usuarios_eliminarUsuario.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_eliminarUsuario.setText("Eliminar usuario");
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
 
+        btn_usuarios_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_limpiar.setText("Limpiar todos los campos");
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
@@ -208,22 +244,24 @@ public class Modulo1 extends javax.swing.JFrame {
                     .addComponent(jScrollPane_usuarios_contenedorTabla)
                     .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_usuarios_codUser, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_login, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(85, 85, 85)
+                            .addComponent(lab_usuarios_codUser, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_usuarios_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_usuarios_login, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_usuarios_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_usuarios_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbox_usuarios_nivelAcceso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pass_usuarios_pass2)
-                            .addComponent(pass_usuarios_pass)
-                            .addComponent(txt_usuarios_login)
-                            .addComponent(txt_usuarios_rut)
-                            .addComponent(txt_usuarios_codUser))
+                            .addComponent(cbox_usuarios_nivelAcceso, 0, 165, Short.MAX_VALUE)
+                            .addComponent(txt_usuarios_estado, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(pass_usuarios_pass2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(pass_usuarios_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_usuarios_login, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_usuarios_rut, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_usuarios_codUser, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)))
+                        .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_usuariosLayout.setVerticalGroup(
@@ -251,18 +289,29 @@ public class Modulo1 extends javax.swing.JFrame {
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lab_usuarios_pass2)
                             .addComponent(pass_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(60, 60, 60)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lab_usuarios_estado)
+                            .addComponent(txt_usuarios_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lab_usuarios_nivelAcceso)
                             .addComponent(cbox_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addGap(85, 85, 85)
                 .addComponent(jScrollPane_usuarios_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
         );
 
         jTabbedPane.addTab("Usuarios", jPanelTab_usuarios);
 
+        jPanelTab_clientes.setBackground(new java.awt.Color(0, 102, 0));
+
+        txt_clientes_codUser1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_clientes_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        table_clientes.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -282,27 +331,38 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_clientes_contenedorTabla.setViewportView(table_clientes);
 
+        lab_clientes_codCliente.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_clientes_codCliente.setForeground(new java.awt.Color(255, 255, 255));
         lab_clientes_codCliente.setText("Código cliente");
 
+        lab_clientes_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_clientes_rut.setForeground(new java.awt.Color(255, 255, 255));
         lab_clientes_rut.setText("RUT");
 
+        jPanel_clientes_contenedorBotones.setBackground(new java.awt.Color(0, 102, 0));
         jPanel_clientes_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_clientes_listarClientes.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_listarClientes.setText("Listar clientes");
         jPanel_clientes_contenedorBotones.add(btn_clientes_listarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 150, -1));
 
+        btn_clientes_editarRegistro.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_editarRegistro.setText("Editar registro");
         jPanel_clientes_contenedorBotones.add(btn_clientes_editarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 150, -1));
 
+        btn_clientes_finEdicion.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_finEdicion.setText("Fin edición");
         jPanel_clientes_contenedorBotones.add(btn_clientes_finEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 150, -1));
 
+        btn_clientes_aniadirNuevoCliente.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_aniadirNuevoCliente.setText("Añadir nuevo cliente");
         jPanel_clientes_contenedorBotones.add(btn_clientes_aniadirNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
+        btn_clientes_eliminarCliente.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_eliminarCliente.setText("Eliminar cliente");
         jPanel_clientes_contenedorBotones.add(btn_clientes_eliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
 
+        btn_clientes_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_limpiar.setText("Limpiar todos los campos");
         jPanel_clientes_contenedorBotones.add(btn_clientes_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
@@ -315,15 +375,15 @@ public class Modulo1 extends javax.swing.JFrame {
                 .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelTab_clientesLayout.createSequentialGroup()
                         .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_clientes_codCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_clientes_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(85, 85, 85)
+                            .addComponent(lab_clientes_codCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_clientes_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
                         .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_clientes_rut, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(txt_clientes_codUser1)))
+                            .addComponent(txt_clientes_rut, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_clientes_codUser1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
                     .addComponent(jScrollPane_clientes_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelTab_clientesLayout.setVerticalGroup(
@@ -340,45 +400,89 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(lab_clientes_rut)
                             .addComponent(txt_clientes_rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
+                .addGap(85, 85, 85)
                 .addComponent(jScrollPane_clientes_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Clientes", jPanelTab_clientes);
 
+        jPanelTab_productos.setBackground(new java.awt.Color(0, 51, 0));
+
+        lab_productos_codProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_codProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_codProducto.setText("Código Producto");
 
+        lab_productos_nombreProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_nombreProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_nombreProducto.setText("Nombre Producto");
 
+        lab_productos_descProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_descProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_descProducto.setText("Descripción Producto");
 
+        lab_productos_unidadProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_unidadProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_unidadProducto.setText("Unidad Producto");
 
+        lab_productos_precioProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_precioProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_precioProducto.setText("Precio Producto");
 
+        lab_productos_precioCompra.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_precioCompra.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_precioCompra.setText("Precio Compra");
 
+        lab_productos_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_stock.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_stock.setText("Stock Producto");
 
+        lab_productos_ubicacionBodega.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_ubicacionBodega.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_ubicacionBodega.setText("Ubicación en Bodega");
 
+        lab_productos_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_productos_codCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_codCategoria.setText("Código Categoría");
 
+        txt_productos_codProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_nombreProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_descProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_unidadProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_precioProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_precioCompra.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_ubicacionBodega.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_productos_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        jPanel_productos_contenedorBotones.setBackground(new java.awt.Color(0, 51, 0));
         jPanel_productos_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_productos_listarProductos.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_listarProductos.setText("Listar produtos");
         jPanel_productos_contenedorBotones.add(btn_productos_listarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 150, -1));
 
+        btn_productos_editarRegistro.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_editarRegistro.setText("Editar registro");
         jPanel_productos_contenedorBotones.add(btn_productos_editarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 150, -1));
 
+        btn_productos_finEdicion.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_finEdicion.setText("Fin edición");
         jPanel_productos_contenedorBotones.add(btn_productos_finEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 150, -1));
 
+        btn_productos_aniadirProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_aniadirProducto.setText("Añadir producto");
         jPanel_productos_contenedorBotones.add(btn_productos_aniadirProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
+        btn_productos_eliminarProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_eliminarProducto.setText("Eliminar producto");
         btn_productos_eliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,9 +491,11 @@ public class Modulo1 extends javax.swing.JFrame {
         });
         jPanel_productos_contenedorBotones.add(btn_productos_eliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
 
+        btn_productos_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_limpiar.setText("Limpiar todos los campos");
         jPanel_productos_contenedorBotones.add(btn_productos_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
+        table_productos.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -420,34 +526,34 @@ public class Modulo1 extends javax.swing.JFrame {
                     .addGroup(jPanelTab_productosLayout.createSequentialGroup()
                         .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                                .addComponent(lab_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85)
-                                .addComponent(txt_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lab_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(65, 65, 65)
+                                .addComponent(txt_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                                    .addComponent(lab_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                                    .addComponent(txt_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lab_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(65, 65, 65)
+                                    .addComponent(txt_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelTab_productosLayout.createSequentialGroup()
                                     .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lab_productos_codProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_nombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_descProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_unidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_precioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_precioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(85, 85, 85)
+                                        .addComponent(lab_productos_codProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lab_productos_nombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lab_productos_descProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lab_productos_unidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lab_productos_precioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lab_productos_precioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lab_productos_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(65, 65, 65)
                                     .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txt_productos_precioCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_descProducto)
-                                        .addComponent(txt_productos_nombreProducto)
-                                        .addComponent(txt_productos_codProducto)
-                                        .addComponent(txt_productos_unidadProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_precioProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_stock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)))))
+                                        .addComponent(txt_productos_precioCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                        .addComponent(txt_productos_descProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                        .addComponent(txt_productos_nombreProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                        .addComponent(txt_productos_codProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                        .addComponent(txt_productos_unidadProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                        .addComponent(txt_productos_precioProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                        .addComponent(txt_productos_stock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_productos_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)))
+                        .addComponent(jPanel_productos_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_productosLayout.setVerticalGroup(
@@ -489,40 +595,68 @@ public class Modulo1 extends javax.swing.JFrame {
                     .addComponent(lab_productos_ubicacionBodega)
                     .addComponent(txt_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lab_productos_codCategoria)
-                    .addComponent(txt_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lab_productos_codCategoria))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane_productos_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(88, 88, 88))
         );
 
         jTabbedPane.addTab("Productos", jPanelTab_productos);
 
+        jPanelTab_categoria.setBackground(new java.awt.Color(0, 102, 0));
+
+        lab_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_nombreCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_nombreCategoria.setText("Nombre Categoría");
 
+        lab_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_codCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_codCategoria.setText("Código Categoría");
 
+        lab_categorias_desc_Categoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_desc_Categoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_desc_Categoria.setText("Descripción Categoría");
 
+        lab_categorias_grupo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_grupo.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_grupo.setText("Grupo");
 
+        lab_categorias_borrado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_borrado.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_borrado.setText("Borrado");
 
+        txt_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_categorias_descCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_categorias_grupo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_categorias_borrado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        jPanel_categorias_contenedorBotones.setBackground(new java.awt.Color(0, 102, 0));
         jPanel_categorias_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_categorias_listarCategorias.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_listarCategorias.setText("Listar categorías");
         jPanel_categorias_contenedorBotones.add(btn_categorias_listarCategorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 150, -1));
 
+        btn_categorias_editarRegistro.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_editarRegistro.setText("Editar registro");
         jPanel_categorias_contenedorBotones.add(btn_categorias_editarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 150, -1));
 
+        btn_categorias_finEdicion.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_finEdicion.setText("Fin edición");
         jPanel_categorias_contenedorBotones.add(btn_categorias_finEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 150, -1));
 
+        btn_categorias_aniadirCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_aniadirCategoria.setText("Añadir categoría");
         jPanel_categorias_contenedorBotones.add(btn_categorias_aniadirCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
+        btn_categorias_eliminarCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_eliminarCategoria.setText("Eliminar categoría");
         btn_categorias_eliminarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -531,9 +665,11 @@ public class Modulo1 extends javax.swing.JFrame {
         });
         jPanel_categorias_contenedorBotones.add(btn_categorias_eliminarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
 
+        btn_categorias_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_limpiar.setText("Limpiar todos los campos");
         jPanel_categorias_contenedorBotones.add(btn_categorias_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
+        table_productos1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_productos1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -563,20 +699,20 @@ public class Modulo1 extends javax.swing.JFrame {
                     .addComponent(jScrollPane_categorias_contenedorTabla)
                     .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
                         .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_desc_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(85, 85, 85)
+                            .addComponent(lab_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_categorias_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_categorias_desc_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_categorias_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
                         .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_categorias_descCategoria)
-                            .addComponent(txt_categorias_codCategoria)
-                            .addComponent(txt_categorias_nombreCategoria)
-                            .addComponent(txt_categorias_grupo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                            .addComponent(txt_categorias_descCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_categorias_grupo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)))
+                        .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_categoriaLayout.setVerticalGroup(
@@ -605,13 +741,16 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(lab_categorias_borrado)
                             .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
+                .addGap(85, 85, 85)
                 .addComponent(jScrollPane_categorias_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Categorías", jPanelTab_categoria);
 
+        jPanelTab_stock.setBackground(new java.awt.Color(0, 51, 0));
+
+        table_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_stock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -641,6 +780,9 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_stock_contenedorTabla.setViewportView(table_stock);
 
+        jPanel1.setBackground(new java.awt.Color(0, 51, 0));
+
+        btn_stock_listarStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_stock_listarStock.setText("Actualizar stock");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -666,7 +808,7 @@ public class Modulo1 extends javax.swing.JFrame {
             .addGroup(jPanelTab_stockLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_stock_contenedorTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
+                    .addComponent(jScrollPane_stock_contenedorTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
                     .addGroup(jPanelTab_stockLayout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -679,7 +821,7 @@ public class Modulo1 extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane_stock_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Stock", jPanelTab_stock);
@@ -690,7 +832,7 @@ public class Modulo1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(mod1_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jTabbedPane)
@@ -700,8 +842,8 @@ public class Modulo1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addComponent(mod1_title)
+                .addGap(5, 5, 5)
                 .addComponent(jTabbedPane))
         );
 
@@ -723,11 +865,6 @@ public class Modulo1 extends javax.swing.JFrame {
     private void btn_categorias_eliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categorias_eliminarCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categorias_eliminarCategoriaActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-      
-    // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -791,45 +928,46 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_usuarios_limpiar;
     public javax.swing.JButton btn_usuarios_listarUsuarios;
     public javax.swing.JComboBox<String> cbox_usuarios_nivelAcceso;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanelTab_categoria;
-    private javax.swing.JPanel jPanelTab_clientes;
-    private javax.swing.JPanel jPanelTab_productos;
-    private javax.swing.JPanel jPanelTab_stock;
-    private javax.swing.JPanel jPanelTab_usuarios;
-    private javax.swing.JPanel jPanel_categorias_contenedorBotones;
-    private javax.swing.JPanel jPanel_clientes_contenedorBotones;
-    private javax.swing.JPanel jPanel_productos_contenedorBotones;
-    private javax.swing.JPanel jPanel_usuarios_contenedorBotones;
-    private javax.swing.JScrollPane jScrollPane_categorias_contenedorTabla;
-    private javax.swing.JScrollPane jScrollPane_clientes_contenedorTabla;
-    private javax.swing.JScrollPane jScrollPane_productos_contenedorTabla;
-    private javax.swing.JScrollPane jScrollPane_stock_contenedorTabla;
-    private javax.swing.JScrollPane jScrollPane_usuarios_contenedorTabla;
-    private javax.swing.JTabbedPane jTabbedPane;
-    private javax.swing.JLabel lab_categorias_borrado;
-    private javax.swing.JLabel lab_categorias_codCategoria;
-    private javax.swing.JLabel lab_categorias_desc_Categoria;
-    private javax.swing.JLabel lab_categorias_grupo;
-    private javax.swing.JLabel lab_categorias_nombreCategoria;
-    private javax.swing.JLabel lab_clientes_codCliente;
-    private javax.swing.JLabel lab_clientes_rut;
-    private javax.swing.JLabel lab_productos_codCategoria;
-    private javax.swing.JLabel lab_productos_codProducto;
-    private javax.swing.JLabel lab_productos_descProducto;
-    private javax.swing.JLabel lab_productos_nombreProducto;
-    private javax.swing.JLabel lab_productos_precioCompra;
-    private javax.swing.JLabel lab_productos_precioProducto;
-    private javax.swing.JLabel lab_productos_stock;
-    private javax.swing.JLabel lab_productos_ubicacionBodega;
-    private javax.swing.JLabel lab_productos_unidadProducto;
-    private javax.swing.JLabel lab_usuarios_codUser;
-    private javax.swing.JLabel lab_usuarios_login;
-    private javax.swing.JLabel lab_usuarios_nivelAcceso;
-    private javax.swing.JLabel lab_usuarios_pass;
-    private javax.swing.JLabel lab_usuarios_pass2;
-    private javax.swing.JLabel lab_usuarios_rut;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanelTab_categoria;
+    public javax.swing.JPanel jPanelTab_clientes;
+    public javax.swing.JPanel jPanelTab_productos;
+    public javax.swing.JPanel jPanelTab_stock;
+    public javax.swing.JPanel jPanelTab_usuarios;
+    public javax.swing.JPanel jPanel_categorias_contenedorBotones;
+    public javax.swing.JPanel jPanel_clientes_contenedorBotones;
+    public javax.swing.JPanel jPanel_productos_contenedorBotones;
+    public javax.swing.JPanel jPanel_usuarios_contenedorBotones;
+    public javax.swing.JScrollPane jScrollPane_categorias_contenedorTabla;
+    public javax.swing.JScrollPane jScrollPane_clientes_contenedorTabla;
+    public javax.swing.JScrollPane jScrollPane_productos_contenedorTabla;
+    public javax.swing.JScrollPane jScrollPane_stock_contenedorTabla;
+    public javax.swing.JScrollPane jScrollPane_usuarios_contenedorTabla;
+    public javax.swing.JTabbedPane jTabbedPane;
+    public javax.swing.JLabel lab_categorias_borrado;
+    public javax.swing.JLabel lab_categorias_codCategoria;
+    public javax.swing.JLabel lab_categorias_desc_Categoria;
+    public javax.swing.JLabel lab_categorias_grupo;
+    public javax.swing.JLabel lab_categorias_nombreCategoria;
+    public javax.swing.JLabel lab_clientes_codCliente;
+    public javax.swing.JLabel lab_clientes_rut;
+    public javax.swing.JLabel lab_productos_codCategoria;
+    public javax.swing.JLabel lab_productos_codProducto;
+    public javax.swing.JLabel lab_productos_descProducto;
+    public javax.swing.JLabel lab_productos_nombreProducto;
+    public javax.swing.JLabel lab_productos_precioCompra;
+    public javax.swing.JLabel lab_productos_precioProducto;
+    public javax.swing.JLabel lab_productos_stock;
+    public javax.swing.JLabel lab_productos_ubicacionBodega;
+    public javax.swing.JLabel lab_productos_unidadProducto;
+    public javax.swing.JLabel lab_usuarios_codUser;
+    public javax.swing.JLabel lab_usuarios_estado;
+    public javax.swing.JLabel lab_usuarios_login;
+    public javax.swing.JLabel lab_usuarios_nivelAcceso;
+    public javax.swing.JLabel lab_usuarios_pass;
+    public javax.swing.JLabel lab_usuarios_pass2;
+    public javax.swing.JLabel lab_usuarios_rut;
+    public javax.swing.JLabel mod1_title;
     public javax.swing.JPasswordField pass_usuarios_pass;
     public javax.swing.JPasswordField pass_usuarios_pass2;
     public javax.swing.JTable table_clientes;
@@ -854,6 +992,7 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JTextField txt_productos_ubicacionBodega;
     public javax.swing.JTextField txt_productos_unidadProducto;
     public javax.swing.JTextField txt_usuarios_codUser;
+    public javax.swing.JTextField txt_usuarios_estado;
     public javax.swing.JTextField txt_usuarios_login;
     public javax.swing.JTextField txt_usuarios_rut;
     // End of variables declaration//GEN-END:variables

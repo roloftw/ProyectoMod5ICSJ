@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2017 a las 02:06:15
+-- Tiempo de generación: 24-11-2017 a las 17:13:09
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -29,8 +29,8 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `cambiar_stock` (IN `new_stock` INT(11), IN `pcod` BIGINT(20))  NO SQL
 UPDATE producto SET stock_producto = new_stock WHERE cod_producto = pcod$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `desactivar_usuario` (IN `prut` VARCHAR(100))  NO SQL
-UPDATE usuario SET estado = 0 WHERE rut_usuario = prut$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `desactivar_usuario` (IN `plogin` VARCHAR(100))  NO SQL
+UPDATE usuario SET estado = "Inactivo" WHERE login = plogin$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `editar_categoria` (IN `pnombre` VARCHAR(450), IN `pcod` INT(11), IN `pdescripcion` VARCHAR(450), IN `pgrupo` INT(11))  NO SQL
 UPDATE categoria SET nombre_categoria = pnombre, descripcion_categoria = pdescripcion, grupo = pgrupo WHERE cod_categoria = pcod$$
@@ -103,13 +103,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_proveedor` (IN `codigo` VA
 	insert into proveedor (cod_proveedor,rut_proveedor) values (codigo,rut);
 end$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_usuario` (IN `codigo` VARCHAR(100), IN `rut` VARCHAR(100), IN `login` VARCHAR(100), IN `pass` VARCHAR(100), IN `acceso` VARCHAR(100))  insert into usuario(cod_usuario,rut_usuario,login,contrasena,estado,acceso,cod_tipo) values(codigo,rut,login,pass,1,acceso,1)$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_usuario` (IN `rut` VARCHAR(100), IN `login` VARCHAR(100), IN `pass` VARCHAR(100), IN `acceso` VARCHAR(100))  insert into usuario(rut_usuario,login,contrasena,estado,acceso,cod_tipo) values(rut,login,pass,"Activo",acceso,1)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_venta` (IN `pcod` INT(11), IN `pfecha` DATE, IN `ptotal` BIGINT(20), IN `pcodUsuario` INT(11), IN `pcodCliente` INT(11), IN `ptipo` VARCHAR(10), IN `pnumFactura` BIGINT(20), IN `ppago` BIGINT(20), IN `pdescuento` INT(11))  NO SQL
 INSERT INTO venta(cod_venta, fecha_venta, total_venta, cod_usuarioFK, cod_clienteFK, tipo_comprobante,  	num_factura, pago, descuento) VALUES (pcod, pfecha, ptotal, pcodUsuario, pcodCliente, ptipo, pnumFactura, ppago, pdescuento)$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `purge_usuario` (IN `plogin` VARCHAR(20))  NO SQL
+DELETE FROM usuario WHERE login = plogin$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registro_historial` (IN `pcod` INT(11), IN `pcodProducto` BIGINT(20), IN `pcodUsuario` INT(11), IN `pdescripcion` VARCHAR(200), IN `preferencia` VARCHAR(100), IN `pcantidad` INT(11), IN `pfecha` DATE)  NO SQL
 INSERT INTO historial(cod_historial, cod_productoFK1, cod_usuarioFK1, descripcion, referencia, cantidad, fecha) VALUES (pcod, pcodProducto, pcodUsuario, pdescripcion, preferencia, pcantidad, pfecha)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tipo_acceso` (IN `longi` VARCHAR(50))  NO SQL
+SELECT acceso FROM usuario where login = longi$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `todos_categoria` (IN `grupo` INT)  BEGIN
 	select cod_categoria,nombre_categoria,descripcion_categoria from categoria where grupo=grupo;
@@ -298,7 +304,7 @@ CREATE TABLE `tipo_usuario` (
 --
 
 CREATE TABLE `usuario` (
-  `cod_usuario` varchar(100) NOT NULL,
+  `cod_usuario` int(100) NOT NULL,
   `rut_usuario` varchar(20) NOT NULL,
   `login` varchar(45) NOT NULL,
   `contrasena` varchar(45) NOT NULL,
@@ -312,11 +318,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `rut_usuario`, `login`, `contrasena`, `estado`, `acceso`, `cod_tipo`) VALUES
-('1', '1', 'login', 'pass', '0', '0', 1),
-('1', '1', 'login', 'pass', '0', '0', 1),
-('123', '12312312', '123123123', 'caca', '0', 'Supervisor', 1),
-('12', 'asdas', 'adasd', 'dfgdfg', '0', 'fgjf', 1),
-('567', '5675', '5676579', '0', '0', 'Seleccione un n', 1);
+(1, '11111111-1', 'admin', 'admin', 'Inactivo', 'Administrador', 1);
 
 -- --------------------------------------------------------
 
@@ -351,6 +353,22 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`cod_cliente`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`cod_usuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `cod_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

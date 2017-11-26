@@ -67,14 +67,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="label_pass" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_type" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="label_user" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txt_user" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="combo_type" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="pass_userpass" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="pass_userpass" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="txt_user" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -103,12 +101,7 @@
                               <Component id="pass_userpass" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="label_pass" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="label_type" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="combo_type" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btn_aceptar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_cancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -149,7 +142,7 @@
         <Component class="javax.swing.JLabel" name="lab_logo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\usuario\Pictures\logo-500.png"/>
+              <Image iconType="3" name="/Images/logo-500.png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -158,21 +151,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txt_user">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="combo_type">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Vendedor"/>
-                <StringItem index="1" value="Supervisor"/>
-                <StringItem index="2" value="Administrador"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
@@ -204,20 +182,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="label_type">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Verdana" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Tipo usuario:"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
