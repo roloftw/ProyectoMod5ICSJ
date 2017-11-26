@@ -180,7 +180,7 @@ public class Modulo1 extends javax.swing.JFrame {
         pass_usuarios_pass2.setText("jPasswordField2");
 
         cbox_usuarios_nivelAcceso.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Admin (Superusuario)", "Supervisor", "Vendedor" }));
+        cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Administrador", "Supervisor", "Vendedor" }));
         cbox_usuarios_nivelAcceso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbox_usuarios_nivelAccesoActionPerformed(evt);
