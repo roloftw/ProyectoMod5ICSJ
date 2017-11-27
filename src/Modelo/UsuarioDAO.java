@@ -24,9 +24,7 @@ public class UsuarioDAO {
             cs.setString(2, login);
             cs.setString(3, password);
             //cs.setString(5, estado);
-            cs.setString(4, acceso);
-            
-            
+            cs.setString(4, acceso);           
         
         int numFAfectadas = cs.executeUpdate();
         if(numFAfectadas > 0) {

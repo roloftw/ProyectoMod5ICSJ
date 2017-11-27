@@ -1288,8 +1288,8 @@
                           <Component id="jScrollPane_categorias_contenedorTabla" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lab_categorias_nombreCategoria" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="lab_categorias_codCategoria" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="lab_categorias_nombreCategoria" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="lab_categorias_desc_Categoria" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="lab_categorias_grupo" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="lab_categorias_borrado" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
@@ -1297,10 +1297,10 @@
                               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="txt_categorias_descCategoria" alignment="0" pref="165" max="32767" attributes="0"/>
-                                  <Component id="txt_categorias_codCategoria" alignment="0" pref="165" max="32767" attributes="0"/>
+                                  <Component id="txt_categorias_nombreCategoria" alignment="0" pref="165" max="32767" attributes="0"/>
                                   <Component id="txt_categorias_grupo" alignment="1" pref="165" max="32767" attributes="0"/>
                                   <Component id="txt_categorias_borrado" alignment="1" pref="165" max="32767" attributes="0"/>
-                                  <Component id="txt_categorias_nombreCategoria" alignment="0" pref="165" max="32767" attributes="0"/>
+                                  <Component id="txt_categorias_codCategoria" alignment="0" pref="165" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jPanel_categorias_contenedorBotones" pref="597" max="32767" attributes="0"/>
@@ -1317,13 +1317,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lab_categorias_nombreCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txt_categorias_nombreCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lab_categorias_codCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_categorias_codCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lab_categorias_codCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txt_categorias_codCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lab_categorias_nombreCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_categorias_nombreCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1351,20 +1351,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lab_categorias_nombreCategoria">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="11" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Categor&#xed;a"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="lab_categorias_codCategoria">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1374,6 +1360,20 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo Categor&#xed;a"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lab_categorias_nombreCategoria">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="11" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nombre Categor&#xed;a"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1421,7 +1421,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_categorias_nombreCategoria">
+            <Component class="javax.swing.JTextField" name="txt_categorias_codCategoria">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="11" style="0"/>
@@ -1431,7 +1431,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_categorias_codCategoria">
+            <Component class="javax.swing.JTextField" name="txt_categorias_nombreCategoria">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Verdana" size="11" style="0"/>

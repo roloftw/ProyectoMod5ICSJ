@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author usuario
@@ -52,6 +54,12 @@ public class Login extends javax.swing.JFrame {
         btn_ayuda.setText("Ayuda");
 
         lab_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-500.png"))); // NOI18N
+
+        pass_userpass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                pass_userpassKeyTyped(evt);
+            }
+        });
 
         label_user.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         label_user.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,6 +136,10 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pass_userpassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pass_userpassKeyTyped
+        
+    }//GEN-LAST:event_pass_userpassKeyTyped
 
     /**
      * @param args the command line arguments

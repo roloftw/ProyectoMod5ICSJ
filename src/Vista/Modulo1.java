@@ -11,6 +11,7 @@ public class Modulo1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         //línea para habilitar o deshabilitar pestañas
         //jTabbedPane.removeTabAt(0);
         
@@ -94,13 +95,13 @@ public class Modulo1 extends javax.swing.JFrame {
         jScrollPane_productos_contenedorTabla = new javax.swing.JScrollPane();
         table_productos = new javax.swing.JTable();
         jPanelTab_categoria = new javax.swing.JPanel();
-        lab_categorias_nombreCategoria = new javax.swing.JLabel();
         lab_categorias_codCategoria = new javax.swing.JLabel();
+        lab_categorias_nombreCategoria = new javax.swing.JLabel();
         lab_categorias_desc_Categoria = new javax.swing.JLabel();
         lab_categorias_grupo = new javax.swing.JLabel();
         lab_categorias_borrado = new javax.swing.JLabel();
-        txt_categorias_nombreCategoria = new javax.swing.JTextField();
         txt_categorias_codCategoria = new javax.swing.JTextField();
+        txt_categorias_nombreCategoria = new javax.swing.JTextField();
         txt_categorias_descCategoria = new javax.swing.JTextField();
         txt_categorias_grupo = new javax.swing.JTextField();
         txt_categorias_borrado = new javax.swing.JTextField();
@@ -607,13 +608,13 @@ public class Modulo1 extends javax.swing.JFrame {
 
         jPanelTab_categoria.setBackground(new java.awt.Color(0, 102, 0));
 
-        lab_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        lab_categorias_nombreCategoria.setForeground(new java.awt.Color(255, 255, 255));
-        lab_categorias_nombreCategoria.setText("Nombre Categoría");
-
         lab_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_categorias_codCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_codCategoria.setText("Código Categoría");
+
+        lab_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_nombreCategoria.setForeground(new java.awt.Color(255, 255, 255));
+        lab_categorias_nombreCategoria.setText("Nombre Categoría");
 
         lab_categorias_desc_Categoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_categorias_desc_Categoria.setForeground(new java.awt.Color(255, 255, 255));
@@ -627,9 +628,9 @@ public class Modulo1 extends javax.swing.JFrame {
         lab_categorias_borrado.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_borrado.setText("Borrado");
 
-        txt_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-
         txt_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        txt_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
         txt_categorias_descCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
@@ -699,18 +700,18 @@ public class Modulo1 extends javax.swing.JFrame {
                     .addComponent(jScrollPane_categorias_contenedorTabla)
                     .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
                         .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_categorias_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lab_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_categorias_desc_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_categorias_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lab_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(65, 65, 65)
                         .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_categorias_descCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(txt_categorias_grupo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
+                            .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -722,12 +723,12 @@ public class Modulo1 extends javax.swing.JFrame {
                 .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
                         .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_categorias_nombreCategoria)
-                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lab_categorias_codCategoria)
                             .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lab_categorias_nombreCategoria)
+                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lab_categorias_desc_Categoria)

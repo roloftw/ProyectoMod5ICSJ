@@ -46,7 +46,7 @@ public class ProductoDAO {
         return rptaRegistro;
     }
     
-    public ArrayList<Usuario> ListProducto() {
+    public ArrayList<Producto> ListProducto() {
         ArrayList listaProductos = new ArrayList();
         Producto product;
         try {

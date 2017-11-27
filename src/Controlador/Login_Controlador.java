@@ -19,9 +19,9 @@ public class Login_Controlador implements ActionListener {
         this.longiModelo = longiModC;
         this.longi.btn_aceptar.addActionListener(this);
         this.longi.btn_ayuda.addActionListener(this);
-        this.longi.btn_cancelar.addActionListener(this);        
+        this.longi.btn_cancelar.addActionListener(this);
     }
-    
+        
     @Override
     public void actionPerformed(ActionEvent e) {
         //boton ok

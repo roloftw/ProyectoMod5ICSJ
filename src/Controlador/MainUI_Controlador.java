@@ -1,6 +1,6 @@
 package Controlador;
 
-import Modelo.UsuarioDAO;
+import Modelo.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.*;
@@ -30,7 +30,10 @@ public class MainUI_Controlador implements ActionListener {
             //mainMenu.dispose();
             Modulo1 mod1 = new Modulo1();
             UsuarioDAO userC = new UsuarioDAO();
-            Modulo1_Controlador mod1C = new Modulo1_Controlador(mod1, userC);
+            ProductoDAO prodC = new ProductoDAO();
+            ClienteDAO clientC = new ClienteDAO();
+            CategoriaDAO catC = new CategoriaDAO();
+            Modulo1_Controlador mod1C = new Modulo1_Controlador(mod1, userC, prodC, clientC, catC);
             mod1.setVisible(true);
             //mainMenu.setVisible(false);
         }
