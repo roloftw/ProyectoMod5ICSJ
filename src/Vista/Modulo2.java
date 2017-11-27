@@ -44,17 +44,21 @@ public class Modulo2 extends javax.swing.JFrame {
         table_venta_clientes = new javax.swing.JTable();
         jScrollPane_venta_contenedorTablaProducto = new javax.swing.JScrollPane();
         table_venta_productos = new javax.swing.JTable();
+        lab_productos_background3 = new javax.swing.JLabel();
         card_confirme = new javax.swing.JPanel();
         lab_confirme_resumenVenta = new javax.swing.JLabel();
-        btn_confirme_terminarVenta = new javax.swing.JButton();
         jScrollPane_venta_contenedorTxtArea = new javax.swing.JScrollPane();
         txtArea_resumen = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        btn_confirme_atras = new javax.swing.JButton();
+        btn_confirme_terminarVenta = new javax.swing.JButton();
+        lab_confirme_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_venta_tituloVenta.setBackground(new java.awt.Color(0, 102, 0));
+        panel_venta_tituloVenta.setOpaque(false);
 
         lab_venta_ventaProducto.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         lab_venta_ventaProducto.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,7 +71,7 @@ public class Modulo2 extends javax.swing.JFrame {
             .addGroup(panel_venta_tituloVentaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lab_venta_ventaProducto)
-                .addGap(802, 802, 802))
+                .addGap(0, 0, 0))
         );
         panel_venta_tituloVentaLayout.setVerticalGroup(
             panel_venta_tituloVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,20 +81,24 @@ public class Modulo2 extends javax.swing.JFrame {
                 .addGap(10, 10, 10))
         );
 
-        getContentPane().add(panel_venta_tituloVenta, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(panel_venta_tituloVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, -1));
 
         panel_venta_cartas.setBackground(new java.awt.Color(0, 102, 0));
         panel_venta_cartas.setLayout(new java.awt.CardLayout());
 
         card_seleccione.setBackground(new java.awt.Color(0, 102, 0));
+        card_seleccione.setOpaque(false);
+        card_seleccione.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lab_seleccione_seleccioneCliente.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         lab_seleccione_seleccioneCliente.setForeground(new java.awt.Color(255, 255, 255));
         lab_seleccione_seleccioneCliente.setText("Seleccione un producto");
+        card_seleccione.add(lab_seleccione_seleccioneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 265, -1, -1));
 
         lab_seleccione_seleccioneProducto.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         lab_seleccione_seleccioneProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_seleccione_seleccioneProducto.setText("Seleccione un cliente");
+        card_seleccione.add(lab_seleccione_seleccioneProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         btn_seleccione_cancelar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_seleccione_cancelar.setText("Cancelar");
@@ -99,6 +107,7 @@ public class Modulo2 extends javax.swing.JFrame {
                 btn_seleccione_cancelarActionPerformed(evt);
             }
         });
+        card_seleccione.add(btn_seleccione_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, -1, -1));
 
         btn_seleccione_continuar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_seleccione_continuar.setText("Continuar");
@@ -107,6 +116,8 @@ public class Modulo2 extends javax.swing.JFrame {
                 btn_seleccione_continuarActionPerformed(evt);
             }
         });
+        card_seleccione.add(btn_seleccione_continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, -1, -1));
+        card_seleccione.add(separador_seleccione, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 249, 750, 10));
 
         table_venta_clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -134,6 +145,8 @@ public class Modulo2 extends javax.swing.JFrame {
             }
         });
         jScrollPane_venta_contenedorTablaClientes.setViewportView(table_venta_clientes);
+
+        card_seleccione.add(jScrollPane_venta_contenedorTablaClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 48, -1, 190));
 
         table_venta_productos.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_venta_productos.setModel(new javax.swing.table.DefaultTableModel(
@@ -163,67 +176,23 @@ public class Modulo2 extends javax.swing.JFrame {
         });
         jScrollPane_venta_contenedorTablaProducto.setViewportView(table_venta_productos);
 
-        javax.swing.GroupLayout card_seleccioneLayout = new javax.swing.GroupLayout(card_seleccione);
-        card_seleccione.setLayout(card_seleccioneLayout);
-        card_seleccioneLayout.setHorizontalGroup(
-            card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(card_seleccioneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(card_seleccioneLayout.createSequentialGroup()
-                            .addGroup(card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane_venta_contenedorTablaProducto, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(separador_seleccione, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addContainerGap())
-                        .addGroup(card_seleccioneLayout.createSequentialGroup()
-                            .addGroup(card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane_venta_contenedorTablaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lab_seleccione_seleccioneProducto)
-                                .addComponent(lab_seleccione_seleccioneCliente))
-                            .addContainerGap()))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_seleccioneLayout.createSequentialGroup()
-                        .addComponent(btn_seleccione_continuar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_seleccione_cancelar)
-                        .addContainerGap())))
-        );
-        card_seleccioneLayout.setVerticalGroup(
-            card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_seleccioneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lab_seleccione_seleccioneProducto)
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane_venta_contenedorTablaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(separador_seleccione, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lab_seleccione_seleccioneCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_venta_contenedorTablaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(card_seleccioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_seleccione_cancelar)
-                    .addComponent(btn_seleccione_continuar))
-                .addGap(100, 100, 100))
-        );
+        card_seleccione.add(jScrollPane_venta_contenedorTablaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 293, 750, 190));
+
+        lab_productos_background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_productos_background3.setText("jLabel1");
+        card_seleccione.add(lab_productos_background3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         panel_venta_cartas.add(card_seleccione, "card3");
 
         card_confirme.setBackground(new java.awt.Color(0, 102, 0));
+        card_confirme.setOpaque(false);
+        card_confirme.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lab_confirme_resumenVenta.setBackground(new java.awt.Color(255, 255, 255));
         lab_confirme_resumenVenta.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         lab_confirme_resumenVenta.setForeground(new java.awt.Color(255, 255, 255));
         lab_confirme_resumenVenta.setText("Resumen venta");
-
-        btn_confirme_terminarVenta.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_confirme_terminarVenta.setText("Terminar venta");
-        btn_confirme_terminarVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_confirme_terminarVentaActionPerformed(evt);
-            }
-        });
+        card_confirme.add(lab_confirme_resumenVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         txtArea_resumen.setEditable(false);
         txtArea_resumen.setBackground(new java.awt.Color(0, 153, 0));
@@ -232,45 +201,32 @@ public class Modulo2 extends javax.swing.JFrame {
         txtArea_resumen.setText("//Acá crear método que obtenga las cosas que fueron seleccionadas en las tablas anteriores\n//Botón Terminar compra reducirá en uno el stock del elemento\n//Añadirá también el producto al cliente(?), para el registro");
         jScrollPane_venta_contenedorTxtArea.setViewportView(txtArea_resumen);
 
-        jButton1.setText("Atrás");
+        card_confirme.add(jScrollPane_venta_contenedorTxtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 39, 750, 520));
 
-        javax.swing.GroupLayout card_confirmeLayout = new javax.swing.GroupLayout(card_confirme);
-        card_confirme.setLayout(card_confirmeLayout);
-        card_confirmeLayout.setHorizontalGroup(
-            card_confirmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(card_confirmeLayout.createSequentialGroup()
-                .addGroup(card_confirmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_confirmeLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_confirme_terminarVenta))
-                    .addGroup(card_confirmeLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lab_confirme_resumenVenta)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(card_confirmeLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane_venta_contenedorTxtArea, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        card_confirmeLayout.setVerticalGroup(
-            card_confirmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(card_confirmeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lab_confirme_resumenVenta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_venta_contenedorTxtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(card_confirmeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_confirme_terminarVenta)
-                    .addComponent(jButton1))
-                .addGap(69, 69, 69))
-        );
+        btn_confirme_atras.setText("Atrás");
+        btn_confirme_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_confirme_atrasActionPerformed(evt);
+            }
+        });
+        card_confirme.add(btn_confirme_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, -1, -1));
+
+        btn_confirme_terminarVenta.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        btn_confirme_terminarVenta.setText("Terminar venta");
+        btn_confirme_terminarVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_confirme_terminarVentaActionPerformed(evt);
+            }
+        });
+        card_confirme.add(btn_confirme_terminarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 570, -1, -1));
+
+        lab_confirme_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_confirme_background.setText("jLabel1");
+        card_confirme.add(lab_confirme_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         panel_venta_cartas.add(card_confirme, "card9");
 
-        getContentPane().add(panel_venta_cartas, java.awt.BorderLayout.CENTER);
+        getContentPane().add(panel_venta_cartas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -289,6 +245,13 @@ public class Modulo2 extends javax.swing.JFrame {
     private void btn_seleccione_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccione_cancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btn_seleccione_cancelarActionPerformed
+
+    private void btn_confirme_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirme_atrasActionPerformed
+        panel_venta_cartas.removeAll();
+        panel_venta_cartas.add(card_seleccione);
+        panel_venta_cartas.repaint();
+        panel_venta_cartas.revalidate();
+    }//GEN-LAST:event_btn_confirme_atrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,16 +290,18 @@ public class Modulo2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn_confirme_atras;
     public javax.swing.JButton btn_confirme_terminarVenta;
     public javax.swing.JButton btn_seleccione_cancelar;
     public javax.swing.JButton btn_seleccione_continuar;
     public javax.swing.JPanel card_confirme;
     public javax.swing.JPanel card_seleccione;
-    private javax.swing.JButton jButton1;
     public javax.swing.JScrollPane jScrollPane_venta_contenedorTablaClientes;
     public javax.swing.JScrollPane jScrollPane_venta_contenedorTablaProducto;
     public javax.swing.JScrollPane jScrollPane_venta_contenedorTxtArea;
+    public javax.swing.JLabel lab_confirme_background;
     public javax.swing.JLabel lab_confirme_resumenVenta;
+    public javax.swing.JLabel lab_productos_background3;
     public javax.swing.JLabel lab_seleccione_seleccioneCliente;
     public javax.swing.JLabel lab_seleccione_seleccioneProducto;
     public javax.swing.JLabel lab_venta_ventaProducto;

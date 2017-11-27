@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,7 +31,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         btn_aceptar = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
         btn_ayuda = new javax.swing.JButton();
@@ -40,106 +39,61 @@ public class Login extends javax.swing.JFrame {
         pass_userpass = new javax.swing.JPasswordField();
         label_user = new javax.swing.JLabel();
         label_pass = new javax.swing.JLabel();
+        lab_login_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(0, 102, 0));
         setResizable(false);
-
-        jPanel1.setBackground(new java.awt.Color(0, 51, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_aceptar.setText("Aceptar");
+        getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         btn_cancelar.setText("Cancelar");
-
-        btn_ayuda.setText("Ayuda");
-
-        lab_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-500.png"))); // NOI18N
-
-        pass_userpass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                pass_userpassKeyTyped(evt);
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 190, -1, -1));
+
+        btn_ayuda.setText("Ayuda");
+        btn_ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ayudaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 190, 69, -1));
+
+        lab_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-500.png"))); // NOI18N
+        getContentPane().add(lab_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 11, -1, -1));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 67, 120, -1));
+        getContentPane().add(pass_userpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 105, 120, -1));
 
         label_user.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         label_user.setForeground(new java.awt.Color(255, 255, 255));
         label_user.setText("Usuario:");
+        getContentPane().add(label_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 68, -1, -1));
 
         label_pass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         label_pass.setForeground(new java.awt.Color(255, 255, 255));
         label_pass.setText("Contraseña:");
+        getContentPane().add(label_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 106, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_aceptar)
-                        .addGap(10, 10, 10)
-                        .addComponent(btn_cancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_ayuda))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_pass)
-                            .addComponent(label_user))
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pass_userpass, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 24, Short.MAX_VALUE)
-                .addComponent(lab_logo)
-                .addGap(27, 27, 27))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(lab_logo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_user)
-                            .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pass_userpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label_pass))
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_aceptar)
-                            .addComponent(btn_cancelar)
-                            .addComponent(btn_ayuda))))
-                .addGap(100, 100, 100))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1))
-        );
+        lab_login_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_login_background.setText("jLabel1");
+        getContentPane().add(lab_login_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pass_userpassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pass_userpassKeyTyped
-        
-    }//GEN-LAST:event_pass_userpassKeyTyped
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void btn_ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ayudaActionPerformed
+     JOptionPane.showMessageDialog(null, "Si olvidó su usuario/contraseña contáctese con el administrador.\nSi el administrador tiene problemas contáctese con contacto@allyouweed.cl");
+    }//GEN-LAST:event_btn_ayudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,7 +134,7 @@ public class Login extends javax.swing.JFrame {
     public javax.swing.JButton btn_aceptar;
     public javax.swing.JButton btn_ayuda;
     public javax.swing.JButton btn_cancelar;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lab_login_background;
     public javax.swing.JLabel lab_logo;
     public javax.swing.JLabel label_pass;
     public javax.swing.JLabel label_user;

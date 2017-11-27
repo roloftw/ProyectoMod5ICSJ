@@ -1,4 +1,6 @@
 package Vista;
+import javax.swing.border.*;
+
 /**
  *
  * @RolandoEscobar
@@ -11,6 +13,7 @@ public class MainUI extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("Gestión Ventas ALL YOU WEED IS LOVE");
+        
     }
 
     /** This method is called from within the constructor to
@@ -29,81 +32,72 @@ public class MainUI extends javax.swing.JFrame {
         btn_mod5 = new javax.swing.JButton();
         btn_mod2 = new javax.swing.JButton();
         lab_mainUI_title = new javax.swing.JLabel();
+        lab_mainUI_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 0));
         setForeground(new java.awt.Color(0, 51, 0));
 
         panel_fondo.setBackground(new java.awt.Color(0, 51, 0));
+        panel_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_mod3.setBackground(new java.awt.Color(51, 153, 0));
+        btn_mod3.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        btn_mod3.setForeground(new java.awt.Color(255, 255, 255));
         btn_mod3.setText("Módulo 3 (Gestión de Ventas)");
+        panel_fondo.add(btn_mod3, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 210, 312, 131));
 
+        btn_mod1.setBackground(new java.awt.Color(51, 153, 0));
+        btn_mod1.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        btn_mod1.setForeground(new java.awt.Color(255, 255, 255));
         btn_mod1.setText("Módulo 1 (Mantenedor de información)");
         btn_mod1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mod1ActionPerformed(evt);
             }
         });
+        panel_fondo.add(btn_mod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 61, 312, 131));
 
+        btn_mod4.setBackground(new java.awt.Color(51, 153, 0));
+        btn_mod4.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        btn_mod4.setForeground(new java.awt.Color(255, 255, 255));
         btn_mod4.setText("Módulo 4 (Gestión de Clientes)");
+        panel_fondo.add(btn_mod4, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 210, 312, 131));
 
+        btn_mod5.setBackground(new java.awt.Color(51, 153, 0));
+        btn_mod5.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        btn_mod5.setForeground(new java.awt.Color(255, 255, 255));
         btn_mod5.setText("Módulo 5 (Vendedores)");
+        panel_fondo.add(btn_mod5, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 359, 312, 131));
 
+        btn_mod2.setBackground(new java.awt.Color(51, 153, 0));
+        btn_mod2.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        btn_mod2.setForeground(new java.awt.Color(255, 255, 255));
         btn_mod2.setText("Módulo 2 (Venta de Productos)");
+        panel_fondo.add(btn_mod2, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 61, 312, 131));
 
         lab_mainUI_title.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         lab_mainUI_title.setForeground(new java.awt.Color(255, 255, 255));
         lab_mainUI_title.setText("420 BLAZE IT NI**A SMOKE WEED EVERYDAY");
+        panel_fondo.add(lab_mainUI_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, 662, 44));
 
-        javax.swing.GroupLayout panel_fondoLayout = new javax.swing.GroupLayout(panel_fondo);
-        panel_fondo.setLayout(panel_fondoLayout);
-        panel_fondoLayout.setHorizontalGroup(
-            panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_fondoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_fondoLayout.createSequentialGroup()
-                        .addComponent(btn_mod5, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(350, 350, 350))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lab_mainUI_title, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panel_fondoLayout.createSequentialGroup()
-                            .addGroup(panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btn_mod3, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btn_mod1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, Short.MAX_VALUE)
-                            .addGroup(panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btn_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btn_mod4, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(21, 21, 21))
-        );
-        panel_fondoLayout.setVerticalGroup(
-            panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_fondoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lab_mainUI_title, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_mod1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panel_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_mod3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_mod4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_mod5, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
-        );
+        lab_mainUI_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_mainUI_background.setText("jLabel1");
+        panel_fondo.add(lab_mainUI_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_fondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -155,6 +149,7 @@ public class MainUI extends javax.swing.JFrame {
     public javax.swing.JButton btn_mod3;
     public javax.swing.JButton btn_mod4;
     public javax.swing.JButton btn_mod5;
+    private javax.swing.JLabel lab_mainUI_background;
     private javax.swing.JLabel lab_mainUI_title;
     private javax.swing.JPanel panel_fondo;
     // End of variables declaration//GEN-END:variables

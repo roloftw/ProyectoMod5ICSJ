@@ -11,7 +11,6 @@ public class Modulo1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         //línea para habilitar o deshabilitar pestañas
         //jTabbedPane.removeTabAt(0);
         
@@ -52,6 +51,7 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_usuarios_crearNuevoUsuario = new javax.swing.JButton();
         btn_usuarios_eliminarUsuario = new javax.swing.JButton();
         btn_usuarios_limpiar = new javax.swing.JButton();
+        lab_usuarios_background = new javax.swing.JLabel();
         jPanelTab_clientes = new javax.swing.JPanel();
         txt_clientes_codUser1 = new javax.swing.JTextField();
         txt_clientes_rut = new javax.swing.JTextField();
@@ -66,6 +66,7 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_clientes_aniadirNuevoCliente = new javax.swing.JButton();
         btn_clientes_eliminarCliente = new javax.swing.JButton();
         btn_clientes_limpiar = new javax.swing.JButton();
+        lab_clientes_background1 = new javax.swing.JLabel();
         jPanelTab_productos = new javax.swing.JPanel();
         lab_productos_codProducto = new javax.swing.JLabel();
         lab_productos_nombreProducto = new javax.swing.JLabel();
@@ -94,14 +95,15 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_productos_limpiar = new javax.swing.JButton();
         jScrollPane_productos_contenedorTabla = new javax.swing.JScrollPane();
         table_productos = new javax.swing.JTable();
+        lab_productos_background2 = new javax.swing.JLabel();
         jPanelTab_categoria = new javax.swing.JPanel();
-        lab_categorias_codCategoria = new javax.swing.JLabel();
         lab_categorias_nombreCategoria = new javax.swing.JLabel();
+        lab_categorias_codCategoria = new javax.swing.JLabel();
         lab_categorias_desc_Categoria = new javax.swing.JLabel();
         lab_categorias_grupo = new javax.swing.JLabel();
         lab_categorias_borrado = new javax.swing.JLabel();
-        txt_categorias_codCategoria = new javax.swing.JTextField();
         txt_categorias_nombreCategoria = new javax.swing.JTextField();
+        txt_categorias_codCategoria = new javax.swing.JTextField();
         txt_categorias_descCategoria = new javax.swing.JTextField();
         txt_categorias_grupo = new javax.swing.JTextField();
         txt_categorias_borrado = new javax.swing.JTextField();
@@ -114,17 +116,12 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_categorias_limpiar = new javax.swing.JButton();
         jScrollPane_categorias_contenedorTabla = new javax.swing.JScrollPane();
         table_productos1 = new javax.swing.JTable();
+        lab_categorias_background3 = new javax.swing.JLabel();
         jPanelTab_stock = new javax.swing.JPanel();
         jScrollPane_stock_contenedorTabla = new javax.swing.JScrollPane();
         table_stock = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        lab_stock_currentStock = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txt_stock_newStock = new javax.swing.JTextField();
-        btn_stock_finCambio = new javax.swing.JButton();
-        btn_stock_editStock = new javax.swing.JButton();
         btn_stock_listarStock = new javax.swing.JButton();
+        lab_productos_background3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 0));
@@ -138,52 +135,54 @@ public class Modulo1 extends javax.swing.JFrame {
         jTabbedPane.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
         jPanelTab_usuarios.setBackground(new java.awt.Color(0, 51, 0));
+        jPanelTab_usuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lab_usuarios_codUser.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_codUser.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_codUser.setText("Código Usuario");
+        jPanelTab_usuarios.add(lab_usuarios_codUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 130, -1));
 
         lab_usuarios_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_rut.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_rut.setText("RUT");
+        jPanelTab_usuarios.add(lab_usuarios_rut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 62, 130, -1));
 
         lab_usuarios_login.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_login.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_login.setText("Login");
+        jPanelTab_usuarios.add(lab_usuarios_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 101, 130, -1));
 
         lab_usuarios_pass.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_pass.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_pass.setText("Contraseña");
+        jPanelTab_usuarios.add(lab_usuarios_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 130, -1));
 
         lab_usuarios_pass2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_pass2.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_pass2.setText("Reingrese contraseña");
+        jPanelTab_usuarios.add(lab_usuarios_pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 179, 130, -1));
 
         lab_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_estado.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_estado.setText("Estado");
+        jPanelTab_usuarios.add(lab_usuarios_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 218, 130, -1));
 
         lab_usuarios_nivelAcceso.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_nivelAcceso.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_nivelAcceso.setText("Nivel de Acceso");
+        jPanelTab_usuarios.add(lab_usuarios_nivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 257, 130, -1));
 
         txt_usuarios_codUser.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_usuarios.add(txt_usuarios_codUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 20, 165, -1));
 
         txt_usuarios_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_usuarios_rut.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_usuarios_rutKeyTyped(evt);
-            }
-        });
+        jPanelTab_usuarios.add(txt_usuarios_rut, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 59, 165, -1));
 
         txt_usuarios_login.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_usuarios_login.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_usuarios_loginKeyTyped(evt);
-            }
-        });
+        jPanelTab_usuarios.add(txt_usuarios_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 98, 165, -1));
 
         txt_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_usuarios.add(txt_usuarios_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 215, 165, -1));
 
         pass_usuarios_pass.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         pass_usuarios_pass.setText("jPasswordField1");
@@ -192,9 +191,11 @@ public class Modulo1 extends javax.swing.JFrame {
                 pass_usuarios_passActionPerformed(evt);
             }
         });
+        jPanelTab_usuarios.add(pass_usuarios_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 137, 165, -1));
 
         pass_usuarios_pass2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         pass_usuarios_pass2.setText("jPasswordField2");
+        jPanelTab_usuarios.add(pass_usuarios_pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 176, 165, -1));
 
         cbox_usuarios_nivelAcceso.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         cbox_usuarios_nivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un nivel de acceso", "Administrador", "Supervisor", "Vendedor" }));
@@ -203,6 +204,7 @@ public class Modulo1 extends javax.swing.JFrame {
                 cbox_usuarios_nivelAccesoActionPerformed(evt);
             }
         });
+        jPanelTab_usuarios.add(cbox_usuarios_nivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 254, 165, -1));
 
         table_usuarios.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_usuarios.setModel(new javax.swing.table.DefaultTableModel(
@@ -224,8 +226,11 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_usuarios_contenedorTabla.setViewportView(table_usuarios);
 
+        jPanelTab_usuarios.add(jScrollPane_usuarios_contenedorTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 975, 187));
+
         jPanel_usuarios_contenedorBotones.setBackground(new java.awt.Color(0, 51, 0));
         jPanel_usuarios_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_usuarios_contenedorBotones.setOpaque(false);
 
         btn_usuarios_editarRegistro.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_editarRegistro.setText("Editar registro");
@@ -244,94 +249,29 @@ public class Modulo1 extends javax.swing.JFrame {
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_crearNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
         btn_usuarios_eliminarUsuario.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_usuarios_eliminarUsuario.setText("Eliminar usuario (Desactivar)");
-        jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 230, -1));
+        btn_usuarios_eliminarUsuario.setText("Eliminar usuario");
+        jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
 
         btn_usuarios_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_limpiar.setText("Limpiar todos los campos");
-        jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 230, -1));
+        jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
-        javax.swing.GroupLayout jPanelTab_usuariosLayout = new javax.swing.GroupLayout(jPanelTab_usuarios);
-        jPanelTab_usuarios.setLayout(jPanelTab_usuariosLayout);
-        jPanelTab_usuariosLayout.setHorizontalGroup(
-            jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_usuarios_contenedorTabla)
-                    .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_usuarios_codUser, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_login, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbox_usuarios_nivelAcceso, 0, 165, Short.MAX_VALUE)
-                            .addComponent(txt_usuarios_estado, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(pass_usuarios_pass2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(pass_usuarios_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_usuarios_login, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_usuarios_rut, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_usuarios_codUser, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanelTab_usuariosLayout.setVerticalGroup(
-            jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelTab_usuariosLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_codUser)
-                            .addComponent(txt_usuarios_codUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_rut)
-                            .addComponent(txt_usuarios_rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_login)
-                            .addComponent(txt_usuarios_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_pass)
-                            .addComponent(pass_usuarios_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_pass2)
-                            .addComponent(pass_usuarios_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_estado)
-                            .addComponent(txt_usuarios_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_usuarios_nivelAcceso)
-                            .addComponent(cbox_usuarios_nivelAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(85, 85, 85)
-                .addComponent(jScrollPane_usuarios_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
-        );
+        jPanelTab_usuarios.add(jPanel_usuarios_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 597, 255));
+
+        lab_usuarios_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_usuarios_background.setText("jLabel1");
+        jPanelTab_usuarios.add(lab_usuarios_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         jTabbedPane.addTab("Usuarios", jPanelTab_usuarios);
 
         jPanelTab_clientes.setBackground(new java.awt.Color(0, 102, 0));
+        jPanelTab_clientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_clientes_codUser1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_clientes.add(txt_clientes_codUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 20, 165, -1));
 
         txt_clientes_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_clientes_rut.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_clientes_rutKeyTyped(evt);
-            }
-        });
+        jPanelTab_clientes.add(txt_clientes_rut, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 59, 165, -1));
 
         table_clientes.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_clientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -353,16 +293,21 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_clientes_contenedorTabla.setViewportView(table_clientes);
 
+        jPanelTab_clientes.add(jScrollPane_clientes_contenedorTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 300, 187));
+
         lab_clientes_codCliente.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_clientes_codCliente.setForeground(new java.awt.Color(255, 255, 255));
         lab_clientes_codCliente.setText("Código cliente");
+        jPanelTab_clientes.add(lab_clientes_codCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 130, -1));
 
         lab_clientes_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_clientes_rut.setForeground(new java.awt.Color(255, 255, 255));
         lab_clientes_rut.setText("RUT");
+        jPanelTab_clientes.add(lab_clientes_rut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 62, 130, -1));
 
         jPanel_clientes_contenedorBotones.setBackground(new java.awt.Color(0, 102, 0));
         jPanel_clientes_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_clientes_contenedorBotones.setOpaque(false);
 
         btn_clientes_listarClientes.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_listarClientes.setText("Listar clientes");
@@ -388,125 +333,92 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_clientes_limpiar.setText("Limpiar todos los campos");
         jPanel_clientes_contenedorBotones.add(btn_clientes_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
-        javax.swing.GroupLayout jPanelTab_clientesLayout = new javax.swing.GroupLayout(jPanelTab_clientes);
-        jPanelTab_clientes.setLayout(jPanelTab_clientesLayout);
-        jPanelTab_clientesLayout.setHorizontalGroup(
-            jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_clientesLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelTab_clientesLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_clientes_codCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_clientes_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_clientes_rut, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_clientes_codUser1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane_clientes_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanelTab_clientesLayout.setVerticalGroup(
-            jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_clientesLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelTab_clientesLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_clientes_codCliente)
-                            .addComponent(txt_clientes_codUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_clientes_rut)
-                            .addComponent(txt_clientes_rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85)
-                .addComponent(jScrollPane_clientes_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanelTab_clientes.add(jPanel_clientes_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 600, 248));
+
+        lab_clientes_background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_clientes_background1.setText("jLabel1");
+        jPanelTab_clientes.add(lab_clientes_background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         jTabbedPane.addTab("Clientes", jPanelTab_clientes);
 
         jPanelTab_productos.setBackground(new java.awt.Color(0, 51, 0));
+        jPanelTab_productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lab_productos_codProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_codProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_codProducto.setText("Código Producto");
+        jPanelTab_productos.add(lab_productos_codProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 130, -1));
 
         lab_productos_nombreProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_nombreProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_nombreProducto.setText("Nombre Producto");
+        jPanelTab_productos.add(lab_productos_nombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 62, 130, -1));
 
         lab_productos_descProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_descProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_descProducto.setText("Descripción Producto");
+        jPanelTab_productos.add(lab_productos_descProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 101, 130, -1));
 
         lab_productos_unidadProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_unidadProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_unidadProducto.setText("Unidad Producto");
+        jPanelTab_productos.add(lab_productos_unidadProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 130, -1));
 
         lab_productos_precioProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_precioProducto.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_precioProducto.setText("Precio Producto");
+        jPanelTab_productos.add(lab_productos_precioProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 179, 130, -1));
 
         lab_productos_precioCompra.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_precioCompra.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_precioCompra.setText("Precio Compra");
+        jPanelTab_productos.add(lab_productos_precioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 218, 130, -1));
 
         lab_productos_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_stock.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_stock.setText("Stock Producto");
+        jPanelTab_productos.add(lab_productos_stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 257, 130, -1));
 
         lab_productos_ubicacionBodega.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_ubicacionBodega.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_ubicacionBodega.setText("Ubicación en Bodega");
+        jPanelTab_productos.add(lab_productos_ubicacionBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 296, 130, -1));
 
         lab_productos_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_productos_codCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_productos_codCategoria.setText("Código Categoría");
+        jPanelTab_productos.add(lab_productos_codCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 335, 130, -1));
 
         txt_productos_codProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_productos.add(txt_productos_codProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 20, 165, -1));
 
         txt_productos_nombreProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_productos.add(txt_productos_nombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 59, 165, -1));
 
         txt_productos_descProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_productos.add(txt_productos_descProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 98, 165, -1));
 
         txt_productos_unidadProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_productos.add(txt_productos_unidadProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 137, 165, -1));
 
         txt_productos_precioProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_productos_precioProducto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_productos_precioProductoKeyTyped(evt);
-            }
-        });
+        jPanelTab_productos.add(txt_productos_precioProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 176, 165, -1));
 
         txt_productos_precioCompra.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_productos_precioCompra.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_productos_precioCompraKeyTyped(evt);
-            }
-        });
+        jPanelTab_productos.add(txt_productos_precioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 215, 165, -1));
 
         txt_productos_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_productos_stock.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_productos_stockKeyTyped(evt);
-            }
-        });
+        jPanelTab_productos.add(txt_productos_stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 254, 165, -1));
 
         txt_productos_ubicacionBodega.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_productos.add(txt_productos_ubicacionBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 293, 165, -1));
 
         txt_productos_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        txt_productos_codCategoria.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_productos_codCategoriaKeyTyped(evt);
-            }
-        });
+        jPanelTab_productos.add(txt_productos_codCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 332, 165, -1));
 
         jPanel_productos_contenedorBotones.setBackground(new java.awt.Color(0, 51, 0));
         jPanel_productos_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_productos_contenedorBotones.setOpaque(false);
 
         btn_productos_listarProductos.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_listarProductos.setText("Listar produtos");
@@ -537,6 +449,8 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_productos_limpiar.setText("Limpiar todos los campos");
         jPanel_productos_contenedorBotones.add(btn_productos_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
+        jPanelTab_productos.add(jPanel_productos_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 594, 255));
+
         table_productos.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -557,130 +471,60 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_productos_contenedorTabla.setViewportView(table_productos);
 
-        javax.swing.GroupLayout jPanelTab_productosLayout = new javax.swing.GroupLayout(jPanelTab_productos);
-        jPanelTab_productos.setLayout(jPanelTab_productosLayout);
-        jPanelTab_productosLayout.setHorizontalGroup(
-            jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_productos_contenedorTabla)
-                    .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                                .addComponent(lab_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
-                                .addComponent(txt_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                                    .addComponent(lab_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(65, 65, 65)
-                                    .addComponent(txt_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelTab_productosLayout.createSequentialGroup()
-                                    .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lab_productos_codProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_nombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_descProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_unidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_precioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_precioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lab_productos_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(65, 65, 65)
-                                    .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txt_productos_precioCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_descProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_nombreProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_codProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_unidadProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_precioProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(txt_productos_stock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel_productos_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanelTab_productosLayout.setVerticalGroup(
-            jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelTab_productosLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_codProducto)
-                            .addComponent(txt_productos_codProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_nombreProducto)
-                            .addComponent(txt_productos_nombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_descProducto)
-                            .addComponent(txt_productos_descProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_unidadProducto)
-                            .addComponent(txt_productos_unidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_precioProducto)
-                            .addComponent(txt_productos_precioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_precioCompra)
-                            .addComponent(txt_productos_precioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_productos_stock)
-                            .addComponent(txt_productos_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel_productos_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lab_productos_ubicacionBodega)
-                    .addComponent(txt_productos_ubicacionBodega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelTab_productosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_productos_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lab_productos_codCategoria))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane_productos_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
-        );
+        jPanelTab_productos.add(jScrollPane_productos_contenedorTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 371, 972, 187));
+
+        lab_productos_background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_productos_background2.setText("jLabel1");
+        jPanelTab_productos.add(lab_productos_background2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         jTabbedPane.addTab("Productos", jPanelTab_productos);
 
         jPanelTab_categoria.setBackground(new java.awt.Color(0, 102, 0));
-
-        lab_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        lab_categorias_codCategoria.setForeground(new java.awt.Color(255, 255, 255));
-        lab_categorias_codCategoria.setText("Código Categoría");
+        jPanelTab_categoria.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lab_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_categorias_nombreCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_nombreCategoria.setText("Nombre Categoría");
+        jPanelTab_categoria.add(lab_categorias_nombreCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 130, -1));
+
+        lab_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_categorias_codCategoria.setForeground(new java.awt.Color(255, 255, 255));
+        lab_categorias_codCategoria.setText("Código Categoría");
+        jPanelTab_categoria.add(lab_categorias_codCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 62, 130, -1));
 
         lab_categorias_desc_Categoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_categorias_desc_Categoria.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_desc_Categoria.setText("Descripción Categoría");
+        jPanelTab_categoria.add(lab_categorias_desc_Categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 101, 130, -1));
 
         lab_categorias_grupo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_categorias_grupo.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_grupo.setText("Grupo");
+        jPanelTab_categoria.add(lab_categorias_grupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 130, -1));
 
         lab_categorias_borrado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_categorias_borrado.setForeground(new java.awt.Color(255, 255, 255));
         lab_categorias_borrado.setText("Borrado");
-
-        txt_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_categoria.add(lab_categorias_borrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 179, 130, -1));
 
         txt_categorias_nombreCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_categoria.add(txt_categorias_nombreCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 20, 165, -1));
+
+        txt_categorias_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_categoria.add(txt_categorias_codCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 59, 165, -1));
 
         txt_categorias_descCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_categoria.add(txt_categorias_descCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 98, 165, -1));
 
         txt_categorias_grupo.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_categoria.add(txt_categorias_grupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 137, 165, -1));
 
         txt_categorias_borrado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jPanelTab_categoria.add(txt_categorias_borrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 176, 165, -1));
 
         jPanel_categorias_contenedorBotones.setBackground(new java.awt.Color(0, 102, 0));
         jPanel_categorias_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_categorias_contenedorBotones.setOpaque(false);
 
         btn_categorias_listarCategorias.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_listarCategorias.setText("Listar categorías");
@@ -711,86 +555,38 @@ public class Modulo1 extends javax.swing.JFrame {
         btn_categorias_limpiar.setText("Limpiar todos los campos");
         jPanel_categorias_contenedorBotones.add(btn_categorias_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
 
+        jPanelTab_categoria.add(jPanel_categorias_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 594, 248));
+
         table_productos1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_productos1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Código Categoría", "Nombre", "Descripción", "Grupo"
+                "Nombre", "Código", "Descripción", "Grupo", "Borrado"
             }
         ));
         jScrollPane_categorias_contenedorTabla.setViewportView(table_productos1);
 
-        javax.swing.GroupLayout jPanelTab_categoriaLayout = new javax.swing.GroupLayout(jPanelTab_categoria);
-        jPanelTab_categoria.setLayout(jPanelTab_categoriaLayout);
-        jPanelTab_categoriaLayout.setHorizontalGroup(
-            jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_categorias_contenedorTabla)
-                    .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lab_categorias_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_desc_Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lab_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_categorias_descCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_grupo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanelTab_categoriaLayout.setVerticalGroup(
-            jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelTab_categoriaLayout.createSequentialGroup()
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_categorias_codCategoria)
-                            .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_categorias_nombreCategoria)
-                            .addComponent(txt_categorias_nombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_categorias_desc_Categoria)
-                            .addComponent(txt_categorias_descCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_categorias_grupo)
-                            .addComponent(txt_categorias_grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelTab_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lab_categorias_borrado)
-                            .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(jScrollPane_categorias_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanelTab_categoria.add(jScrollPane_categorias_contenedorTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 353, 972, 187));
+
+        lab_categorias_background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_categorias_background3.setText("jLabel1");
+        jPanelTab_categoria.add(lab_categorias_background3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         jTabbedPane.addTab("Categorías", jPanelTab_categoria);
 
         jPanelTab_stock.setBackground(new java.awt.Color(0, 51, 0));
+        jPanelTab_stock.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         table_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_stock.setModel(new javax.swing.table.DefaultTableModel(
@@ -822,90 +618,17 @@ public class Modulo1 extends javax.swing.JFrame {
         ));
         jScrollPane_stock_contenedorTabla.setViewportView(table_stock);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 0));
+        jPanelTab_stock.setOpaque(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
-        );
-
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Stock actual producto seleccionado");
-
-        lab_stock_currentStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        lab_stock_currentStock.setForeground(new java.awt.Color(255, 255, 255));
-        lab_stock_currentStock.setText("0");
-
-        jLabel4.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nuevo stock");
-
-        txt_stock_newStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-
-        btn_stock_finCambio.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_stock_finCambio.setText("Cambiar");
-
-        btn_stock_editStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_stock_editStock.setText("Cambio stock");
+        jPanelTab_stock.add(jScrollPane_stock_contenedorTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 972, 350));
 
         btn_stock_listarStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_stock_listarStock.setText("Actualizar stock");
+        jPanelTab_stock.add(btn_stock_listarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 16, 150, -1));
 
-        javax.swing.GroupLayout jPanelTab_stockLayout = new javax.swing.GroupLayout(jPanelTab_stock);
-        jPanelTab_stock.setLayout(jPanelTab_stockLayout);
-        jPanelTab_stockLayout.setHorizontalGroup(
-            jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_stockLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_stock_contenedorTabla)
-                    .addGroup(jPanelTab_stockLayout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_stock_listarStock, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_stock_editStock)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lab_stock_currentStock)
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_stock_newStock, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_stock_finCambio)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanelTab_stockLayout.setVerticalGroup(
-            jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTab_stockLayout.createSequentialGroup()
-                .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelTab_stockLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelTab_stockLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(lab_stock_currentStock)
-                            .addComponent(jLabel4)
-                            .addComponent(txt_stock_newStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_stock_finCambio)
-                            .addComponent(btn_stock_editStock)
-                            .addComponent(btn_stock_listarStock))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_stock_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
+        lab_productos_background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
+        lab_productos_background3.setText("jLabel1");
+        jPanelTab_stock.add(lab_productos_background3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 2, 1000, 640));
 
         jTabbedPane.addTab("Stock", jPanelTab_stock);
 
@@ -919,7 +642,7 @@ public class Modulo1 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jTabbedPane)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -948,62 +671,6 @@ public class Modulo1 extends javax.swing.JFrame {
     private void btn_categorias_eliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categorias_eliminarCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categorias_eliminarCategoriaActionPerformed
-
-    private void txt_usuarios_rutKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarios_rutKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' ) && (c < '-' || c > '.')) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_usuarios_rutKeyTyped
-
-    private void txt_usuarios_loginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarios_loginKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' )) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_usuarios_loginKeyTyped
-
-    private void txt_clientes_rutKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_clientes_rutKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' ) && (c < '-' || c > '.')) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_clientes_rutKeyTyped
-
-    private void txt_productos_precioProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_precioProductoKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' )) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_productos_precioProductoKeyTyped
-
-    private void txt_productos_precioCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_precioCompraKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' )) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_productos_precioCompraKeyTyped
-
-    private void txt_productos_stockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_stockKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' )) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_productos_stockKeyTyped
-
-    private void txt_productos_codCategoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_codCategoriaKeyTyped
-        //método para validar que sólo se ingresen números y no letras
-        char c = evt.getKeyChar();
-        if((c < '0' || c > '9' )) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_productos_codCategoriaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -1059,8 +726,6 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_productos_finEdicion;
     public javax.swing.JButton btn_productos_limpiar;
     public javax.swing.JButton btn_productos_listarProductos;
-    public javax.swing.JButton btn_stock_editStock;
-    public javax.swing.JButton btn_stock_finCambio;
     public javax.swing.JButton btn_stock_listarStock;
     public javax.swing.JButton btn_usuarios_crearNuevoUsuario;
     public javax.swing.JButton btn_usuarios_editarRegistro;
@@ -1069,9 +734,6 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_usuarios_limpiar;
     public javax.swing.JButton btn_usuarios_listarUsuarios;
     public javax.swing.JComboBox<String> cbox_usuarios_nivelAcceso;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanelTab_categoria;
     public javax.swing.JPanel jPanelTab_clientes;
     public javax.swing.JPanel jPanelTab_productos;
@@ -1087,13 +749,17 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JScrollPane jScrollPane_stock_contenedorTabla;
     public javax.swing.JScrollPane jScrollPane_usuarios_contenedorTabla;
     public javax.swing.JTabbedPane jTabbedPane;
+    private javax.swing.JLabel lab_categorias_background3;
     public javax.swing.JLabel lab_categorias_borrado;
     public javax.swing.JLabel lab_categorias_codCategoria;
     public javax.swing.JLabel lab_categorias_desc_Categoria;
     public javax.swing.JLabel lab_categorias_grupo;
     public javax.swing.JLabel lab_categorias_nombreCategoria;
+    private javax.swing.JLabel lab_clientes_background1;
     public javax.swing.JLabel lab_clientes_codCliente;
     public javax.swing.JLabel lab_clientes_rut;
+    private javax.swing.JLabel lab_productos_background2;
+    private javax.swing.JLabel lab_productos_background3;
     public javax.swing.JLabel lab_productos_codCategoria;
     public javax.swing.JLabel lab_productos_codProducto;
     public javax.swing.JLabel lab_productos_descProducto;
@@ -1103,7 +769,7 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JLabel lab_productos_stock;
     public javax.swing.JLabel lab_productos_ubicacionBodega;
     public javax.swing.JLabel lab_productos_unidadProducto;
-    public javax.swing.JLabel lab_stock_currentStock;
+    private javax.swing.JLabel lab_usuarios_background;
     public javax.swing.JLabel lab_usuarios_codUser;
     public javax.swing.JLabel lab_usuarios_estado;
     public javax.swing.JLabel lab_usuarios_login;
@@ -1135,7 +801,6 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JTextField txt_productos_stock;
     public javax.swing.JTextField txt_productos_ubicacionBodega;
     public javax.swing.JTextField txt_productos_unidadProducto;
-    public javax.swing.JTextField txt_stock_newStock;
     public javax.swing.JTextField txt_usuarios_codUser;
     public javax.swing.JTextField txt_usuarios_estado;
     public javax.swing.JTextField txt_usuarios_login;
