@@ -11,14 +11,15 @@ package Modelo;
  */
 public class Categoria {
     
-    private int cod_categoria, grupo;
+    private int cod_categoria, grupo, borrado;
     private String nombre, descripcion;
 
-    public Categoria(int cod_categoria, String nombre, String descripcion, int grupo) {
+    public Categoria(int cod_categoria, String nombre, String descripcion, int grupo, int borrado) {
         this.cod_categoria = cod_categoria;
         this.grupo = grupo;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.borrado = borrado;
     }
 
     public Categoria() {
@@ -26,6 +27,7 @@ public class Categoria {
         this.grupo = 0;
         this.nombre = "";
         this.descripcion = "";
+        this.borrado = 0;
     }
 
     public int getCod_categoria() {
@@ -59,6 +61,15 @@ public class Categoria {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public int getBorrado() {
+        return borrado;
+    }
+
+    public void setBorrado(int borrado) {
+        this.borrado = borrado;
+    }
+    
     
 }
     

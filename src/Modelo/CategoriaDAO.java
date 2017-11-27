@@ -58,9 +58,11 @@ public class CategoriaDAO {
                 category.setNombre(rs.getString(2));
                 category.setDescripcion(rs.getString(3));
                 category.setGrupo(rs.getInt(4));
+                category.setBorrado(rs.getInt(5));
                 listaCategoria.add(category);
             }
         } catch (Exception e) {
+            System.out.println(e);
         }
         return listaCategoria;
     }

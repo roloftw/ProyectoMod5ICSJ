@@ -6,7 +6,7 @@ package Modelo;
  */
 public class Venta {
 
-    public int cod_venta, total_venta, cod_usuarioFK, cod_clienteFK, num_factura, pago, descuento;
+    public int cod_venta, cod_productoFK, total_venta, cod_usuarioFK, cod_clienteFK, num_factura, pago, descuento;
     public String fecha_venta, tipo_comprobante;
     
     public Venta() {

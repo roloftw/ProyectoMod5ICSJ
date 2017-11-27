@@ -33,7 +33,8 @@ public class MainUI_Controlador implements ActionListener {
             ProductoDAO prodC = new ProductoDAO();
             ClienteDAO clientC = new ClienteDAO();
             CategoriaDAO catC = new CategoriaDAO();
-            Modulo1_Controlador mod1C = new Modulo1_Controlador(mod1, userC, prodC, clientC, catC);
+            ProductoStockDAO prodSC = new ProductoStockDAO();
+            Modulo1_Controlador mod1C = new Modulo1_Controlador(mod1, userC, prodC, clientC, catC, prodSC);
             mod1.setVisible(true);
             //mainMenu.setVisible(false);
         }

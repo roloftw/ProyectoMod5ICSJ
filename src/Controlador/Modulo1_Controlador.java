@@ -4,9 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.Modulo1;
 import Modelo.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -19,13 +23,25 @@ public class Modulo1_Controlador implements ActionListener {
     ProductoDAO productCRUD = new ProductoDAO();
     ClienteDAO clientCRUD = new ClienteDAO();
     CategoriaDAO catCRUD = new CategoriaDAO();
+    ProductoStockDAO prodstockCRUD = new ProductoStockDAO();
     
-    public Modulo1_Controlador(Modulo1 vistaC, UsuarioDAO userC, ProductoDAO prodC, ClienteDAO clientC, CategoriaDAO catC) {
+    // Create an instance of SimpleDateFormat used for formatting 
+    // the string representation of date (year/month/day)
+    DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+
+    // Get the date today using Calendar object.
+    Date today = Calendar.getInstance().getTime();        
+    // Using DateFormat format method we can create a string 
+    // representation of a date with the defined format.
+    String reportDate = df.format(today);
+    
+    public Modulo1_Controlador(Modulo1 vistaC, UsuarioDAO userC, ProductoDAO prodC, ClienteDAO clientC, CategoriaDAO catC, ProductoStockDAO prodSC) {
         this.mod1CRUD = vistaC;
         this.userCRUD = userC;
         this.productCRUD = prodC;
         this.clientCRUD = clientC;
         this.catCRUD = catC;
+        this.prodstockCRUD = prodSC;
         this.mod1CRUD.btn_categorias_aniadirCategoria.addActionListener(this);
         this.mod1CRUD.btn_categorias_editarRegistro.addActionListener(this);
         this.mod1CRUD.btn_categorias_eliminarCategoria.addActionListener(this);
@@ -51,6 +67,8 @@ public class Modulo1_Controlador implements ActionListener {
         this.mod1CRUD.btn_usuarios_finEdicion.addActionListener(this);
         this.mod1CRUD.btn_usuarios_limpiar.addActionListener(this);
         this.mod1CRUD.btn_usuarios_listarUsuarios.addActionListener(this);
+        this.mod1CRUD.btn_stock_editStock.addActionListener(this);
+        this.mod1CRUD.btn_stock_finCambio.addActionListener(this);
     }
     
     public void limpiarCamposUsuario() {
@@ -115,8 +133,8 @@ public class Modulo1_Controlador implements ActionListener {
     public void LlenarTablaProductos(JTable tablaD) {
         DefaultTableModel modeloT = new DefaultTableModel();
         tablaD.setModel(modeloT);
-                /*int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
-                int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria*/
+            /*int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
+            int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria*/
         modeloT.addColumn("Cód Producto");
         modeloT.addColumn("Nombre");
         modeloT.addColumn("Descripción");
@@ -146,6 +164,38 @@ public class Modulo1_Controlador implements ActionListener {
         }
     }
     
+    public void LlenarTablaProductoStock(JTable tablaD) {
+        DefaultTableModel modeloT = new DefaultTableModel();
+        tablaD.setModel(modeloT);
+            /*int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
+            int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria*/
+        modeloT.addColumn("Cód Producto");
+        modeloT.addColumn("Nombre");
+        modeloT.addColumn("Descripción");
+        modeloT.addColumn("Unidad");
+        modeloT.addColumn("Precio");
+        modeloT.addColumn("Precio Compra");
+        modeloT.addColumn("Stock");
+        modeloT.addColumn("Fecha Stock");
+        
+        Object[] columna = new Object[8];
+        
+        int numRegistros = prodstockCRUD.ListProductoStock().size();
+        
+        for(int i = 0; i < numRegistros; i++) {
+            columna[0] = prodstockCRUD.ListProductoStock().get(i).getCod_producto();
+            columna[1] = prodstockCRUD.ListProductoStock().get(i).getNombre_prod();
+            columna[2] = prodstockCRUD.ListProductoStock().get(i).getDescripcion_prod();
+            columna[3] = prodstockCRUD.ListProductoStock().get(i).getUnid_prod();
+            columna[4] = prodstockCRUD.ListProductoStock().get(i).getPrecio_producto();
+            columna[5] = prodstockCRUD.ListProductoStock().get(i).getPrecio_compra();
+            columna[6] = prodstockCRUD.ListProductoStock().get(i).getStock_producto();
+            columna[7] = prodstockCRUD.ListProductoStock().get(i).getFecha_prod();
+            
+            modeloT.addRow(columna);
+        }
+    }
+    
     public void LlenarTablaClientes(JTable tablaD) {
         DefaultTableModel modeloT = new DefaultTableModel();
         tablaD.setModel(modeloT);
@@ -168,13 +218,14 @@ public class Modulo1_Controlador implements ActionListener {
     public void LlenarTablaCategorias(JTable tablaD) {
         DefaultTableModel modeloT = new DefaultTableModel();
         tablaD.setModel(modeloT);
-        //int cod_categoria, String nombre, String descripcion, int grupo
+        //int cod_categoria, String nombre, String descripcion, int grupo, int borrado
         modeloT.addColumn("Cód Categoría");
         modeloT.addColumn("Nombre");
         modeloT.addColumn("Descripción");
         modeloT.addColumn("Grupo");
+        modeloT.addColumn("Nivel borrado");
         
-        Object[] columna = new Object[4];
+        Object[] columna = new Object[5];
         
         int numRegistros = catCRUD.ListCategoria().size();
         
@@ -183,6 +234,7 @@ public class Modulo1_Controlador implements ActionListener {
             columna[1] = catCRUD.ListCategoria().get(i).getNombre();
             columna[2] = catCRUD.ListCategoria().get(i).getDescripcion();
             columna[3] = catCRUD.ListCategoria().get(i).getGrupo();
+            columna[4] = catCRUD.ListCategoria().get(i).getBorrado();
             
             modeloT.addRow(columna);
         }
@@ -246,6 +298,7 @@ public class Modulo1_Controlador implements ActionListener {
                 } else {
                     JOptionPane.showMessageDialog(null, "No se pudo realizar la edición");
                 }
+            mod1CRUD.txt_usuarios_rut.setEditable(true);
             LlenarTablaUsuarios(mod1CRUD.table_usuarios);
             limpiarCamposUsuario();
         }
@@ -293,8 +346,9 @@ public class Modulo1_Controlador implements ActionListener {
             String cod_categoria = mod1CRUD.txt_productos_codCategoria.getText();
             int codC = Integer.parseInt(cod_categoria);
             
+            String rptaRegPS = prodstockCRUD.InsertProductoStock(codP, nombre_producto, desc_producto, unid_producto, precioP, precioC, stockP, reportDate);
             String rptaRegP = productCRUD.InsertProducto(codP, nombre_producto, desc_producto, unid_producto, precioP, precioC, stockP, ubicacion_bodega, codC);
-            if (rptaRegP != null) {
+            if (rptaRegP != null && rptaRegPS != null) {
                 JOptionPane.showMessageDialog(null, rptaRegP);
             } else {
                 JOptionPane.showMessageDialog(null, "Registro erróneo");
@@ -343,13 +397,14 @@ public class Modulo1_Controlador implements ActionListener {
             String cod_categoria = mod1CRUD.txt_productos_codCategoria.getText();
             int codC = Integer.parseInt(cod_categoria);
             
+            int rptaEditPS = prodstockCRUD.editarProductoStock(codP, nombre_producto, desc_producto, unid_producto, precioP, precioC, stockP, reportDate);
             int rptaEditP = productCRUD.editarProducto(codP, nombre_producto, desc_producto, unid_producto, precioP, precioC, stockP, ubicacion_bodega, codC);
-            if(rptaEditP > 0) {
+            if(rptaEditP > 0 && rptaEditPS > 0) {
                     JOptionPane.showMessageDialog(null, "Edición exitosa");                    
             } else {
                     JOptionPane.showMessageDialog(null, "No se pudo realizar la edición");
             }
-            
+            mod1CRUD.txt_productos_codProducto.setEditable(true);
             LlenarTablaProductos(mod1CRUD.table_productos);
             limpiarCamposProducto();
         }
@@ -362,7 +417,8 @@ public class Modulo1_Controlador implements ActionListener {
                 String cod = String.valueOf(mod1CRUD.table_productos.getValueAt(filaEditar, 0));
                 int codP = Integer.parseInt(cod);
                 int rptaDelete = productCRUD.eliminarProducto(codP);
-                if(rptaDelete > 0) {
+                int rptaDeletePS = prodstockCRUD.eliminarProductoStock(codP);
+                if(rptaDelete > 0 && rptaDeletePS > 0) {
                 JOptionPane.showMessageDialog(null, "Registro eliminado correctamente");
             } else {
                 JOptionPane.showMessageDialog(null, "Ocurrió un error al eliminar el registro");
@@ -408,7 +464,7 @@ public class Modulo1_Controlador implements ActionListener {
         if(filaEditar >= 0 && numFS == 1) {
             mod1CRUD.txt_clientes_codUser1.setText(String.valueOf(mod1CRUD.table_clientes.getValueAt(filaEditar, 0)));
             mod1CRUD.txt_clientes_rut.setText(String.valueOf(mod1CRUD.table_clientes.getValueAt(filaEditar, 1)));
-            mod1CRUD.txt_clientes_codUser1.setEditable(false);
+            mod1CRUD.txt_clientes_rut.setEditable(false);
         } else {
                 JOptionPane.showMessageDialog(null, "Debe seleccionar al menos una fila");
         }
@@ -426,6 +482,7 @@ public class Modulo1_Controlador implements ActionListener {
                 } else {
                     JOptionPane.showMessageDialog(null, "No se pudo realizar la edición");
                 }
+            mod1CRUD.txt_clientes_rut.setEditable(true);
             LlenarTablaClientes(mod1CRUD.table_clientes);
             limpiarCamposCliente();
         }
@@ -545,7 +602,39 @@ public class Modulo1_Controlador implements ActionListener {
         }
         
         if(e.getSource() == mod1CRUD.btn_stock_listarStock) {
-            LlenarTablaProductos(mod1CRUD.table_stock);
+            LlenarTablaProductoStock(mod1CRUD.table_stock);
+        }
+        
+        if(e.getSource() == mod1CRUD.btn_stock_editStock) {
+            int filaEditar = mod1CRUD.table_stock.getSelectedRow();
+            int numFS = mod1CRUD.table_stock.getSelectedRowCount();
+            
+            //int stockP
+            if(filaEditar >= 0 && numFS == 1) {
+                mod1CRUD.lab_stock_currentStock.setText(String.valueOf(mod1CRUD.table_stock.getValueAt(filaEditar, 6)));
+            } else {
+                JOptionPane.showMessageDialog(null, "Debe seleccionar al menos una fila");
+            }
+        }
+        
+        if(e.getSource() == mod1CRUD.btn_stock_finCambio) {
+            
+            int filaEditar = mod1CRUD.table_stock.getSelectedRow();
+            int numFS = mod1CRUD.table_stock.getSelectedRowCount();
+            //int cod_categoria, String nombre, String descripcion, int grupo
+            String cod_producto = String.valueOf(mod1CRUD.table_stock.getValueAt(filaEditar, 0));
+            int codP = Integer.parseInt(cod_producto);
+            String stock = mod1CRUD.txt_stock_newStock.getText();
+            int newStock = Integer.parseInt(stock);
+            
+            int rptaEditPS = prodstockCRUD.updateStock(codP, newStock);
+            int rptaEdit = productCRUD.updateProductoStock(codP, newStock);
+            if(rptaEdit > 0 && rptaEditPS > 0) {
+                    JOptionPane.showMessageDialog(null, "Edición exitosa");                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo realizar la edición");
+                }
+            LlenarTablaProductoStock(mod1CRUD.table_stock);
         }
     }
 

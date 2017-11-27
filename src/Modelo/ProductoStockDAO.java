@@ -11,21 +11,23 @@ import java.util.ArrayList;
  *
  * @RolandoEscobar
  */
-public class ProductoDAO {
+public class ProductoStockDAO {
 
+    //int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, int precio_producto, int precio_compra, int stock_producto, String fecha_stock
+    
     Conexion conexion;
     
-    public ProductoDAO() {
+    public ProductoStockDAO() {
         conexion = new Conexion();
     }
     
-    public String InsertProducto(int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
-            int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria) {
+    public String InsertProductoStock(int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
+            int precio_producto, int precio_compra, int stock_producto, String fecha_stock) {
         String rptaRegistro = null;
         try {
             Connection accesoDB = conexion.getConexion();
             //llamar a la rutina creada en phpMyAdmin
-            CallableStatement cs = accesoDB.prepareCall("{call insertar_producto(?,?,?,?,?,?,?,?,?)}");
+            CallableStatement cs = accesoDB.prepareCall("{call insertar_productoStock(?,?,?,?,?,?,?,?)}");
             cs.setInt(1, cod_producto);
             cs.setString(2, nombre_producto);
             cs.setString(3, descripcion_producto);
@@ -33,8 +35,7 @@ public class ProductoDAO {
             cs.setInt(5, precio_producto);
             cs.setInt(6, precio_compra);
             cs.setInt(7, stock_producto);
-            cs.setString(8, ubicacion_bodega);
-            cs.setInt(9, cod_categoria);           
+            cs.setString(8, fecha_stock);           
         
         int numFAfectadas = cs.executeUpdate();
         if(numFAfectadas > 0) {
@@ -46,39 +47,38 @@ public class ProductoDAO {
         return rptaRegistro;
     }
     
-    public ArrayList<Producto> ListProducto() {
-        ArrayList listaProductos = new ArrayList();
-        Producto product;
+    public ArrayList<ProductoStock> ListProductoStock() {
+        ArrayList listaProductoStock = new ArrayList();
+        ProductoStock product;
         try {
             Connection acceDB = conexion.getConexion();
-            PreparedStatement ps = acceDB.prepareStatement("SELECT * FROM `producto`");
+            PreparedStatement ps = acceDB.prepareStatement("SELECT * FROM `productostock`");
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 /*int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
                 int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria*/
-                product = new Producto();
+                product = new ProductoStock();
                 product.setCod_producto(rs.getInt(1));
-                product.setNombre_producto(rs.getString(2));
-                product.setDescripcion_producto(rs.getString(3));
-                product.setUnidad_producto(rs.getString(4));
+                product.setNombre_prod(rs.getString(2));
+                product.setDescripcion_prod(rs.getString(3));
+                product.setUnid_prod(rs.getString(4));
                 product.setPrecio_producto(rs.getInt(5));
                 product.setPrecio_compra(rs.getInt(6));
                 product.setStock_producto(rs.getInt(7));
-                product.setUbicacion_bodega(rs.getString(8));                
-                product.setCod_categoriaFK(rs.getInt(9));
-                listaProductos.add(product);
+                product.setFecha_prod(rs.getString(8));
+                listaProductoStock.add(product);
             }
         } catch (Exception e) {
         }
-        return listaProductos;
+        return listaProductoStock;
     }
     
-    public int editarProducto(int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
-            int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria) {
+    public int editarProductoStock(int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
+            int precio_producto, int precio_compra, int stock_producto, String fecha_stock) {
         int numFA = 0;
         try {
             Connection acceDB = conexion.getConexion();
-            CallableStatement cs = acceDB.prepareCall("{call editar_producto(?,?,?,?,?,?,?,?,?)}");
+            CallableStatement cs = acceDB.prepareCall("{call editar_productoStock(?,?,?,?,?,?,?,?)}");
             cs.setInt(1, cod_producto);
             cs.setString(2, nombre_producto);
             cs.setString(3, descripcion_producto);
@@ -86,8 +86,7 @@ public class ProductoDAO {
             cs.setInt(5, precio_producto);
             cs.setInt(6, precio_compra);
             cs.setInt(7, stock_producto);
-            cs.setString(8, ubicacion_bodega);
-            cs.setInt(9, cod_categoria);
+            cs.setString(8, fecha_stock);
         
             numFA = cs.executeUpdate();            
         } catch (SQLException e) {
@@ -96,11 +95,11 @@ public class ProductoDAO {
         return numFA;
     }
     
-    public int eliminarProducto(int cod_producto) {
+    public int eliminarProductoStock(int cod_producto) {
         int numFA = 0;
         try {
             Connection acceDB = conexion.getConexion();
-            CallableStatement cs = acceDB.prepareCall("{call eliminar_producto(?)}");
+            CallableStatement cs = acceDB.prepareCall("{call eliminar_productoStock(?)}");
             cs.setInt(1, cod_producto);
             
             numFA = cs.executeUpdate();
@@ -110,11 +109,11 @@ public class ProductoDAO {
         return numFA;
     }
     
-    public int updateProductoStock(int cod_producto, int stock_producto) {
+    public int updateStock(int cod_producto, int stock_producto) {
         int numFA = 0;
         try {
             Connection acceDB = conexion.getConexion();
-            CallableStatement cs = acceDB.prepareCall("{call update_stockProducto(?,?)}");
+            CallableStatement cs = acceDB.prepareCall("{call update_productoStock(?,?)}");
             cs.setInt(1, cod_producto);
             cs.setInt(2, stock_producto);
         

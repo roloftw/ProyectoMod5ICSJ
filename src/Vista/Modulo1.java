@@ -118,6 +118,12 @@ public class Modulo1 extends javax.swing.JFrame {
         jScrollPane_stock_contenedorTabla = new javax.swing.JScrollPane();
         table_stock = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lab_stock_currentStock = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_stock_newStock = new javax.swing.JTextField();
+        btn_stock_finCambio = new javax.swing.JButton();
+        btn_stock_editStock = new javax.swing.JButton();
         btn_stock_listarStock = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -164,8 +170,18 @@ public class Modulo1 extends javax.swing.JFrame {
         txt_usuarios_codUser.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
         txt_usuarios_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_usuarios_rut.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_usuarios_rutKeyTyped(evt);
+            }
+        });
 
         txt_usuarios_login.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_usuarios_login.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_usuarios_loginKeyTyped(evt);
+            }
+        });
 
         txt_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
@@ -228,12 +244,12 @@ public class Modulo1 extends javax.swing.JFrame {
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_crearNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
         btn_usuarios_eliminarUsuario.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_usuarios_eliminarUsuario.setText("Eliminar usuario");
-        jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
+        btn_usuarios_eliminarUsuario.setText("Eliminar usuario (Desactivar)");
+        jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 230, -1));
 
         btn_usuarios_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_limpiar.setText("Limpiar todos los campos");
-        jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
+        jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 230, -1));
 
         javax.swing.GroupLayout jPanelTab_usuariosLayout = new javax.swing.GroupLayout(jPanelTab_usuarios);
         jPanelTab_usuarios.setLayout(jPanelTab_usuariosLayout);
@@ -262,7 +278,7 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(txt_usuarios_rut, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(txt_usuarios_codUser, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
+                        .addComponent(jPanel_usuarios_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_usuariosLayout.setVerticalGroup(
@@ -311,6 +327,11 @@ public class Modulo1 extends javax.swing.JFrame {
         txt_clientes_codUser1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
         txt_clientes_rut.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_clientes_rut.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_clientes_rutKeyTyped(evt);
+            }
+        });
 
         table_clientes.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_clientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -384,7 +405,7 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(txt_clientes_codUser1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
                     .addComponent(jScrollPane_clientes_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
+                .addComponent(jPanel_clientes_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelTab_clientesLayout.setVerticalGroup(
@@ -455,14 +476,34 @@ public class Modulo1 extends javax.swing.JFrame {
         txt_productos_unidadProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
         txt_productos_precioProducto.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_productos_precioProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_productos_precioProductoKeyTyped(evt);
+            }
+        });
 
         txt_productos_precioCompra.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_productos_precioCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_productos_precioCompraKeyTyped(evt);
+            }
+        });
 
         txt_productos_stock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_productos_stock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_productos_stockKeyTyped(evt);
+            }
+        });
 
         txt_productos_ubicacionBodega.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
 
         txt_productos_codCategoria.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_productos_codCategoria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_productos_codCategoriaKeyTyped(evt);
+            }
+        });
 
         jPanel_productos_contenedorBotones.setBackground(new java.awt.Color(0, 51, 0));
         jPanel_productos_contenedorBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -554,7 +595,7 @@ public class Modulo1 extends javax.swing.JFrame {
                                         .addComponent(txt_productos_precioProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                                         .addComponent(txt_productos_stock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_productos_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
+                        .addComponent(jPanel_productos_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_productosLayout.setVerticalGroup(
@@ -673,19 +714,19 @@ public class Modulo1 extends javax.swing.JFrame {
         table_productos1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_productos1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Código", "Descripción", "Grupo", "Borrado"
+                "Código Categoría", "Nombre", "Descripción", "Grupo"
             }
         ));
         jScrollPane_categorias_contenedorTabla.setViewportView(table_productos1);
@@ -713,7 +754,7 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(txt_categorias_codCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)))
+                        .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_categoriaLayout.setVerticalGroup(
@@ -742,7 +783,7 @@ public class Modulo1 extends javax.swing.JFrame {
                             .addComponent(lab_categorias_borrado)
                             .addComponent(txt_categorias_borrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel_categorias_contenedorBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85)
+                .addGap(76, 76, 76)
                 .addComponent(jScrollPane_categorias_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -783,24 +824,39 @@ public class Modulo1 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 0));
 
-        btn_stock_listarStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_stock_listarStock.setText("Actualizar stock");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_stock_listarStock, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 53, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_stock_listarStock)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 43, Short.MAX_VALUE)
         );
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Stock actual producto seleccionado");
+
+        lab_stock_currentStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        lab_stock_currentStock.setForeground(new java.awt.Color(255, 255, 255));
+        lab_stock_currentStock.setText("0");
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Nuevo stock");
+
+        txt_stock_newStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+
+        btn_stock_finCambio.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        btn_stock_finCambio.setText("Cambiar");
+
+        btn_stock_editStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        btn_stock_editStock.setText("Cambio stock");
+
+        btn_stock_listarStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        btn_stock_listarStock.setText("Actualizar stock");
 
         javax.swing.GroupLayout jPanelTab_stockLayout = new javax.swing.GroupLayout(jPanelTab_stock);
         jPanelTab_stock.setLayout(jPanelTab_stockLayout);
@@ -809,20 +865,46 @@ public class Modulo1 extends javax.swing.JFrame {
             .addGroup(jPanelTab_stockLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane_stock_contenedorTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+                    .addComponent(jScrollPane_stock_contenedorTabla)
                     .addGroup(jPanelTab_stockLayout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_stock_listarStock, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_stock_editStock)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lab_stock_currentStock)
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_stock_newStock, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_stock_finCambio)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelTab_stockLayout.setVerticalGroup(
             jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTab_stockLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTab_stockLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTab_stockLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanelTab_stockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(lab_stock_currentStock)
+                            .addComponent(jLabel4)
+                            .addComponent(txt_stock_newStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_stock_finCambio)
+                            .addComponent(btn_stock_editStock)
+                            .addComponent(btn_stock_listarStock))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane_stock_contenedorTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Stock", jPanelTab_stock);
@@ -866,6 +948,62 @@ public class Modulo1 extends javax.swing.JFrame {
     private void btn_categorias_eliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categorias_eliminarCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categorias_eliminarCategoriaActionPerformed
+
+    private void txt_usuarios_rutKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarios_rutKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' ) && (c < '-' || c > '.')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_usuarios_rutKeyTyped
+
+    private void txt_usuarios_loginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarios_loginKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' )) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_usuarios_loginKeyTyped
+
+    private void txt_clientes_rutKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_clientes_rutKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' ) && (c < '-' || c > '.')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_clientes_rutKeyTyped
+
+    private void txt_productos_precioProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_precioProductoKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' )) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_productos_precioProductoKeyTyped
+
+    private void txt_productos_precioCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_precioCompraKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' )) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_productos_precioCompraKeyTyped
+
+    private void txt_productos_stockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_stockKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' )) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_productos_stockKeyTyped
+
+    private void txt_productos_codCategoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_productos_codCategoriaKeyTyped
+        //método para validar que sólo se ingresen números y no letras
+        char c = evt.getKeyChar();
+        if((c < '0' || c > '9' )) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_productos_codCategoriaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -921,6 +1059,8 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_productos_finEdicion;
     public javax.swing.JButton btn_productos_limpiar;
     public javax.swing.JButton btn_productos_listarProductos;
+    public javax.swing.JButton btn_stock_editStock;
+    public javax.swing.JButton btn_stock_finCambio;
     public javax.swing.JButton btn_stock_listarStock;
     public javax.swing.JButton btn_usuarios_crearNuevoUsuario;
     public javax.swing.JButton btn_usuarios_editarRegistro;
@@ -929,6 +1069,8 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_usuarios_limpiar;
     public javax.swing.JButton btn_usuarios_listarUsuarios;
     public javax.swing.JComboBox<String> cbox_usuarios_nivelAcceso;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanelTab_categoria;
     public javax.swing.JPanel jPanelTab_clientes;
@@ -961,6 +1103,7 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JLabel lab_productos_stock;
     public javax.swing.JLabel lab_productos_ubicacionBodega;
     public javax.swing.JLabel lab_productos_unidadProducto;
+    public javax.swing.JLabel lab_stock_currentStock;
     public javax.swing.JLabel lab_usuarios_codUser;
     public javax.swing.JLabel lab_usuarios_estado;
     public javax.swing.JLabel lab_usuarios_login;
@@ -992,6 +1135,7 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JTextField txt_productos_stock;
     public javax.swing.JTextField txt_productos_ubicacionBodega;
     public javax.swing.JTextField txt_productos_unidadProducto;
+    public javax.swing.JTextField txt_stock_newStock;
     public javax.swing.JTextField txt_usuarios_codUser;
     public javax.swing.JTextField txt_usuarios_estado;
     public javax.swing.JTextField txt_usuarios_login;

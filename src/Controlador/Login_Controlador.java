@@ -4,28 +4,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.*;
 import Modelo.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 /**
  *
  * @RolandoEscobar
  */
-public class Login_Controlador implements ActionListener {
+public class Login_Controlador implements ActionListener, KeyListener {
 
     Login longi = new Login();
     LoginDAO longiModelo = new LoginDAO();
     
-    public Login_Controlador (Login longiC, LoginDAO longiModC) {
-        this.longi = longiC;
-        this.longiModelo = longiModC;
-        this.longi.btn_aceptar.addActionListener(this);
-        this.longi.btn_ayuda.addActionListener(this);
-        this.longi.btn_cancelar.addActionListener(this);
+public Login_Controlador (Login longiC, LoginDAO longiModC) {
+    this.longi = longiC;
+    this.longiModelo = longiModC;
+    this.longi.btn_aceptar.addActionListener(this);
+    this.longi.btn_ayuda.addActionListener(this);
+    this.longi.btn_cancelar.addActionListener(this);
+    this.longi.pass_userpass.addKeyListener(this);
     }
-        
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        //boton ok
-    if(e.getSource() == longi.btn_aceptar) {
+    
+public void tryLogin() {
     if(longi.txt_user.getText().length()==0)  // Checking for empty field
       JOptionPane.showMessageDialog(null, "Por favor complete todos los campos");
     else if(longi.pass_userpass.getPassword().length==0)  // Checking for empty field
@@ -64,6 +64,12 @@ public class Login_Controlador implements ActionListener {
           } else
           JOptionPane.showMessageDialog(null, "Nombre de usuario o contraseña incorrectos");
     }
+}    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //boton ok
+    if(e.getSource() == longi.btn_aceptar) {
+        tryLogin();
     }
    
         //botón cancelar
@@ -79,6 +85,23 @@ public class Login_Controlador implements ActionListener {
                                             "\ndel sistema. Si no puede ingresar o no recuerda su contraseña, contacte" +
                                             "\n                                  al administrador de su sistema");
     }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+       if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+            tryLogin();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        
     }
 }
 
