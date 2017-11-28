@@ -33,12 +33,10 @@ public class Modulo1 extends javax.swing.JFrame {
         lab_usuarios_login = new javax.swing.JLabel();
         lab_usuarios_pass = new javax.swing.JLabel();
         lab_usuarios_pass2 = new javax.swing.JLabel();
-        lab_usuarios_estado = new javax.swing.JLabel();
         lab_usuarios_nivelAcceso = new javax.swing.JLabel();
         txt_usuarios_codUser = new javax.swing.JTextField();
         txt_usuarios_rut = new javax.swing.JTextField();
         txt_usuarios_login = new javax.swing.JTextField();
-        txt_usuarios_estado = new javax.swing.JTextField();
         pass_usuarios_pass = new javax.swing.JPasswordField();
         pass_usuarios_pass2 = new javax.swing.JPasswordField();
         cbox_usuarios_nivelAcceso = new javax.swing.JComboBox<>();
@@ -121,6 +119,12 @@ public class Modulo1 extends javax.swing.JFrame {
         jScrollPane_stock_contenedorTabla = new javax.swing.JScrollPane();
         table_stock = new javax.swing.JTable();
         btn_stock_listarStock = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lab_stock_currentStock = new javax.swing.JLabel();
+        btn_stock_editStock = new javax.swing.JButton();
+        txt_stock_newStock = new javax.swing.JTextField();
+        btn_stock_finCambio = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         lab_productos_background3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,15 +166,10 @@ public class Modulo1 extends javax.swing.JFrame {
         lab_usuarios_pass2.setText("Reingrese contraseña");
         jPanelTab_usuarios.add(lab_usuarios_pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 179, 130, -1));
 
-        lab_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        lab_usuarios_estado.setForeground(new java.awt.Color(255, 255, 255));
-        lab_usuarios_estado.setText("Estado");
-        jPanelTab_usuarios.add(lab_usuarios_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 218, 130, -1));
-
         lab_usuarios_nivelAcceso.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         lab_usuarios_nivelAcceso.setForeground(new java.awt.Color(255, 255, 255));
         lab_usuarios_nivelAcceso.setText("Nivel de Acceso");
-        jPanelTab_usuarios.add(lab_usuarios_nivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 257, 130, -1));
+        jPanelTab_usuarios.add(lab_usuarios_nivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
         txt_usuarios_codUser.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jPanelTab_usuarios.add(txt_usuarios_codUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 20, 165, -1));
@@ -180,9 +179,6 @@ public class Modulo1 extends javax.swing.JFrame {
 
         txt_usuarios_login.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jPanelTab_usuarios.add(txt_usuarios_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 98, 165, -1));
-
-        txt_usuarios_estado.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jPanelTab_usuarios.add(txt_usuarios_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 215, 165, -1));
 
         pass_usuarios_pass.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         pass_usuarios_pass.setText("jPasswordField1");
@@ -204,7 +200,7 @@ public class Modulo1 extends javax.swing.JFrame {
                 cbox_usuarios_nivelAccesoActionPerformed(evt);
             }
         });
-        jPanelTab_usuarios.add(cbox_usuarios_nivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 254, 165, -1));
+        jPanelTab_usuarios.add(cbox_usuarios_nivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 230, 170, -1));
 
         table_usuarios.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         table_usuarios.setModel(new javax.swing.table.DefaultTableModel(
@@ -242,6 +238,11 @@ public class Modulo1 extends javax.swing.JFrame {
 
         btn_usuarios_listarUsuarios.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_listarUsuarios.setText("Listar usuarios");
+        btn_usuarios_listarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_usuarios_listarUsuariosActionPerformed(evt);
+            }
+        });
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_listarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 150, -1));
 
         btn_usuarios_crearNuevoUsuario.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
@@ -249,12 +250,12 @@ public class Modulo1 extends javax.swing.JFrame {
         jPanel_usuarios_contenedorBotones.add(btn_usuarios_crearNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
 
         btn_usuarios_eliminarUsuario.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_usuarios_eliminarUsuario.setText("Eliminar usuario");
-        jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 150, -1));
+        btn_usuarios_eliminarUsuario.setText("Eliminar usuario (desactivar)");
+        jPanel_usuarios_contenedorBotones.add(btn_usuarios_eliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 230, -1));
 
         btn_usuarios_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_usuarios_limpiar.setText("Limpiar todos los campos");
-        jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
+        jPanel_usuarios_contenedorBotones.add(btn_usuarios_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 230, -1));
 
         jPanelTab_usuarios.add(jPanel_usuarios_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 597, 255));
 
@@ -331,7 +332,7 @@ public class Modulo1 extends javax.swing.JFrame {
 
         btn_clientes_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_clientes_limpiar.setText("Limpiar todos los campos");
-        jPanel_clientes_contenedorBotones.add(btn_clientes_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
+        jPanel_clientes_contenedorBotones.add(btn_clientes_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 230, -1));
 
         jPanelTab_clientes.add(jPanel_clientes_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 600, 248));
 
@@ -447,7 +448,7 @@ public class Modulo1 extends javax.swing.JFrame {
 
         btn_productos_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_productos_limpiar.setText("Limpiar todos los campos");
-        jPanel_productos_contenedorBotones.add(btn_productos_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
+        jPanel_productos_contenedorBotones.add(btn_productos_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 230, -1));
 
         jPanelTab_productos.add(jPanel_productos_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 594, 255));
 
@@ -553,7 +554,7 @@ public class Modulo1 extends javax.swing.JFrame {
 
         btn_categorias_limpiar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         btn_categorias_limpiar.setText("Limpiar todos los campos");
-        jPanel_categorias_contenedorBotones.add(btn_categorias_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 150, -1));
+        jPanel_categorias_contenedorBotones.add(btn_categorias_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 230, -1));
 
         jPanelTab_categoria.add(jPanel_categorias_contenedorBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 20, 594, 248));
 
@@ -623,8 +624,25 @@ public class Modulo1 extends javax.swing.JFrame {
         jPanelTab_stock.add(jScrollPane_stock_contenedorTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 972, 350));
 
         btn_stock_listarStock.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        btn_stock_listarStock.setText("Actualizar stock");
-        jPanelTab_stock.add(btn_stock_listarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 16, 150, -1));
+        btn_stock_listarStock.setText("Actualizar tabla de stock");
+        jPanelTab_stock.add(btn_stock_listarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel1.setText("Stock del producto seleccionado");
+        jPanelTab_stock.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+
+        lab_stock_currentStock.setForeground(new java.awt.Color(255, 255, 255));
+        lab_stock_currentStock.setText(" ");
+        jPanelTab_stock.add(lab_stock_currentStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 20, -1));
+
+        btn_stock_editStock.setText("Cambiar stock");
+        jPanelTab_stock.add(btn_stock_editStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 120, -1));
+        jPanelTab_stock.add(txt_stock_newStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 40, 30));
+
+        btn_stock_finCambio.setText("OK");
+        jPanelTab_stock.add(btn_stock_finCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+
+        jLabel2.setText("Nuevo Stock");
+        jPanelTab_stock.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
 
         lab_productos_background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
         lab_productos_background3.setText("jLabel1");
@@ -640,9 +658,7 @@ public class Modulo1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(mod1_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane)
-                .addGap(0, 0, 0))
+            .addComponent(jTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -671,6 +687,10 @@ public class Modulo1 extends javax.swing.JFrame {
     private void btn_categorias_eliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categorias_eliminarCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categorias_eliminarCategoriaActionPerformed
+
+    private void btn_usuarios_listarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarios_listarUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_usuarios_listarUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -726,6 +746,8 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_productos_finEdicion;
     public javax.swing.JButton btn_productos_limpiar;
     public javax.swing.JButton btn_productos_listarProductos;
+    public javax.swing.JButton btn_stock_editStock;
+    public javax.swing.JButton btn_stock_finCambio;
     public javax.swing.JButton btn_stock_listarStock;
     public javax.swing.JButton btn_usuarios_crearNuevoUsuario;
     public javax.swing.JButton btn_usuarios_editarRegistro;
@@ -734,6 +756,8 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JButton btn_usuarios_limpiar;
     public javax.swing.JButton btn_usuarios_listarUsuarios;
     public javax.swing.JComboBox<String> cbox_usuarios_nivelAcceso;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanelTab_categoria;
     public javax.swing.JPanel jPanelTab_clientes;
     public javax.swing.JPanel jPanelTab_productos;
@@ -769,9 +793,9 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JLabel lab_productos_stock;
     public javax.swing.JLabel lab_productos_ubicacionBodega;
     public javax.swing.JLabel lab_productos_unidadProducto;
+    public javax.swing.JLabel lab_stock_currentStock;
     private javax.swing.JLabel lab_usuarios_background;
     public javax.swing.JLabel lab_usuarios_codUser;
-    public javax.swing.JLabel lab_usuarios_estado;
     public javax.swing.JLabel lab_usuarios_login;
     public javax.swing.JLabel lab_usuarios_nivelAcceso;
     public javax.swing.JLabel lab_usuarios_pass;
@@ -801,8 +825,8 @@ public class Modulo1 extends javax.swing.JFrame {
     public javax.swing.JTextField txt_productos_stock;
     public javax.swing.JTextField txt_productos_ubicacionBodega;
     public javax.swing.JTextField txt_productos_unidadProducto;
+    public javax.swing.JTextField txt_stock_newStock;
     public javax.swing.JTextField txt_usuarios_codUser;
-    public javax.swing.JTextField txt_usuarios_estado;
     public javax.swing.JTextField txt_usuarios_login;
     public javax.swing.JTextField txt_usuarios_rut;
     // End of variables declaration//GEN-END:variables

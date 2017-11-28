@@ -59,15 +59,20 @@ public class Modulo2_Controlador implements ActionListener {
         int numRegistros = productoCRUD.ListProducto().size();
         
         for(int i = 0; i < numRegistros; i++) {
-            columna[0] = productoCRUD.ListProducto().get(i).getEstado();
-            columna[1] = productoCRUD.ListProducto().get(i).getRut_usuario();
-            columna[2] = productoCRUD.ListProducto().get(i).getLogin();
-            columna[3] = productoCRUD.ListProducto().get(i).getPassword();
-            columna[4] = productoCRUD.ListProducto().get(i).getEstado();
-            columna[5] = productoCRUD.ListProducto().get(i).getAcceso();
+            columna[0] = productoCRUD.ListProducto().get(i).getCod_producto();
+            columna[1] = productoCRUD.ListProducto().get(i).getNombre_producto();
+            columna[2] = productoCRUD.ListProducto().get(i).getPrecio_producto();
+            columna[3] = productoCRUD.ListProducto().get(i).getPrecio_compra();
+            columna[4] = productoCRUD.ListProducto().get(i).getStock_producto();
+            columna[5] = productoCRUD.ListProducto().get(i).getUbicacion_bodega();
             
             modeloT.addRow(columna);
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //código de lo que se hará al presionar botones del módulo
     }
     
 }

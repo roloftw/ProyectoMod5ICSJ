@@ -34,6 +34,7 @@ public class Modulo3 extends javax.swing.JFrame {
         lab_rankingProductos_seleccioneCategoria = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tab_historialVentas_productosVenta = new javax.swing.JTable();
+        btn_rankingProductos_buscar = new javax.swing.JButton();
         lab_rankingProductos_background3 = new javax.swing.JLabel();
         jPanel_historial = new javax.swing.JPanel();
         cal_historialVentas_fechaDesde = new com.toedter.calendar.JDateChooser();
@@ -88,6 +89,14 @@ public class Modulo3 extends javax.swing.JFrame {
         }
 
         jPanel_ranking.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 390, 147));
+
+        btn_rankingProductos_buscar.setText("Buscar");
+        btn_rankingProductos_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rankingProductos_buscarActionPerformed(evt);
+            }
+        });
+        jPanel_ranking.add(btn_rankingProductos_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
         lab_rankingProductos_background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fondo.jpg"))); // NOI18N
         lab_rankingProductos_background3.setText("jLabel1");
@@ -174,6 +183,10 @@ public class Modulo3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void btn_rankingProductos_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rankingProductos_buscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_rankingProductos_buscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -212,6 +225,7 @@ public class Modulo3 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> box_rankingProductos_seleccioneCategorias;
     public javax.swing.JComboBox<String> box_ventasCliente_clientes;
+    public javax.swing.JButton btn_rankingProductos_buscar;
     public com.toedter.calendar.JDateChooser cal_historialVentas_fechaDesde;
     public com.toedter.calendar.JDateChooser cal_historialVentas_fechaHasta;
     private javax.swing.JLabel jLabel1;

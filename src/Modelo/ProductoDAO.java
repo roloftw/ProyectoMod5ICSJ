@@ -72,6 +72,32 @@ public class ProductoDAO {
         }
         return listaProductos;
     }
+    public ArrayList<Producto> ListProductoRanking() {
+        ArrayList listaProductos = new ArrayList();
+        Producto product;
+        try {
+            Connection acceDB = conexion.getConexion();
+            PreparedStatement ps = acceDB.prepareStatement("SELECT * FROM `producto`");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                /*int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
+                int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria*/
+                product = new Producto();
+                product.setCod_producto(rs.getInt(1));
+                product.setNombre_producto(rs.getString(2));
+                product.setDescripcion_producto(rs.getString(3));
+                product.setUnidad_producto(rs.getString(4));
+                product.setPrecio_producto(rs.getInt(5));
+                product.setPrecio_compra(rs.getInt(6));
+                product.setStock_producto(rs.getInt(7));
+                product.setUbicacion_bodega(rs.getString(8));                
+                product.setCod_categoriaFK(rs.getInt(9));
+                listaProductos.add(product);
+            }
+        } catch (Exception e) {
+        }
+        return listaProductos;
+    }
     
     public int editarProducto(int cod_producto, String nombre_producto, String descripcion_producto, String unidad_producto, 
             int precio_producto, int precio_compra, int stock_producto, String ubicacion_bodega, int cod_categoria) {

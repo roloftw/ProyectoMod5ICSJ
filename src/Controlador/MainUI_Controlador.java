@@ -38,6 +38,13 @@ public class MainUI_Controlador implements ActionListener {
             mod1.setVisible(true);
             //mainMenu.setVisible(false);
         }
+        if(e.getSource() == mainMenu.btn_mod3){
+            Modulo3 mod3 = new Modulo3();
+            ProductoDAO prodC = new ProductoDAO();
+            
+            Modulo3_Controlador mod3C = new Modulo3_Controlador(mod3, prodC);
+            mod3.setVisible(true);
+        }
     }
 
     
